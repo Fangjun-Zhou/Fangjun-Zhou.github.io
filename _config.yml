@@ -27,7 +27,6 @@ url: "" # the base hostname & protocol for your site, e.g. http://example.com
 github_username:  Fangjun Zhou
 
 # Build settings
-theme: no-style-please
 remote-theme: riggraz/no-style-please
 plugins:
   - jekyll-feed
