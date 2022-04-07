@@ -11,3 +11,11 @@ entries:
       show_more: true
       show_more_text: See archive...
       show_more_url: archive.html
+  
+  - title: unity dots
+    post_list:
+      limit: 1
+      category: unity-dots
+      show_more: true
+      show_more_text: See archive...
+      show_more_url: unity-dots.html
