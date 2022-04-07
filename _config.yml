@@ -22,14 +22,21 @@ title: Fishball's Dev Blog
 email: fishball.dev@gmail.com
 description: >- # this means to ignore newlines until "baseurl:"
   Post some stuff related to game development, computer graphics, and so on.
-baseurl: "Blog" # the subpath of your site, e.g. /blog
+baseurl: "" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
 github_username:  Fangjun Zhou
 
 # Build settings
+theme: no-style-please
 remote-theme: riggraz/no-style-please
 plugins:
   - jekyll-feed
+
+theme_config:
+  appearance: "auto" # can be "light", "dark" or "auto"
+  back_home_text: ".." # customize text for homepage link in post layout
+  date_format: "%Y-%m-%d" # customize how date is formatted
+  show_description: true # show blog description in home page
 
 # Exclude from processing.
 # The following items will not be processed, by default.
