@@ -22,7 +22,7 @@ title: Fishball's Dev Blog
 email: fishball.dev@gmail.com
 description: >- # this means to ignore newlines until "baseurl:"
   Post some stuff related to game development, computer graphics, and so on.
-baseurl: "" # the subpath of your site, e.g. /blog
+baseurl: "/Blog" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
 github_username:  Fangjun Zhou
 
