@@ -39,7 +39,7 @@ Then how can ECS perform the search as I mentioned so fast? The answer is simple
 
 This graph[^2] from ECS Manual shows the process I mentioned pretty clear:
 
-![picture 1](/Blog/images/2022-04-08-01-00-33-archetype-foreach.png)  
+![picture 1](/images/2022-04-08-01-00-33-archetype-foreach.png)  
 
 It's worth mentioning that entities can be created through archetypes. This means the created entities will have a certain combination of components. 
 
@@ -65,7 +65,7 @@ Entities can be created in four ways:
 
 The DOTS ECS uses chunks to store entities in each archetype. As I mentioned, this is a brilliant idea. First, we can observe the chunk structure[^3]:
 
-![picture 2](/Blog/images/2022-04-08-01-01-34-chunk-structure.png)  
+![picture 2](/images/2022-04-08-01-01-34-chunk-structure.png)  
 
 
 As we can see, for each archetype, there are several chunks.
