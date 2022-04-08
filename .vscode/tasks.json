@@ -6,7 +6,7 @@
         {
             "label": "Test Blog",
             "type": "shell",
-            "command": "bundle exec jekyll serve"
+            "command": "bundle exec jekyll serve -l"
         }
     ]
 }
