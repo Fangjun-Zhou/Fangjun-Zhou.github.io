@@ -26,37 +26,10 @@ $$
 
 This matrix comes from two facts:
 
-1. Complex number $1$ can be represented by matrix:
-\$$
-\begin{bmatrix}
-    1 & 0 \\
-    0 & 1
-\end{bmatrix}
-$$
-, which is also the identity matrix.
-2. Complex number $i$ can be represented by matrix:
-\$$
-\begin{bmatrix}
-    0 & -1 \\
-    1 & 0
-\end{bmatrix}
-$$
+1. Complex number $1$ can be represented by matrix: $\begin{bmatrix} 1 & 0 \\\\ 0 & 1 \end{bmatrix}$ , which is also the identity matrix.
+2. Complex number $i$ can be represented by matrix: $\begin{bmatrix} 0 & -1 \\\\ 1 & 0 \end{bmatrix}$
 
-This is because in a complex plane, both $1$ and
-\$$
-\begin{bmatrix}
-1 & 0 \\
-0 & 1
-\end{bmatrix}
-$$
-both keep a value intact when performing pre-multiple operation. And both $i$ and
-\$$
-\begin{bmatrix}
-0 & -1 \\
-1 & 0
-\end{bmatrix}
-$$
-rotate a value 90 degrees conter-clockwise when erforming pre-multiple operation.
+This is because in a complex plane, both $1$ and $\begin{bmatrix} 1 & 0 \\\\ 0 & 1 \end{bmatrix}$ both keep a value intact when performing pre-multiple operation. And both $i$ and $\begin{bmatrix} 0 & -1 \\\\ 1 & 0 \end{bmatrix}$ rotate a value 90 degrees conter-clockwise when erforming pre-multiple operation.
 
 After we have these facts, it's easy to see that:
 
