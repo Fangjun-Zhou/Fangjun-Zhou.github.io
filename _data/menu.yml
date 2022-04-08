@@ -14,7 +14,7 @@ entries:
   
   - title: unity dots
     post_list:
-      limit: 1
+      limit: 3
       category: unity-dots
       show_more: true
       show_more_text: See archive...
