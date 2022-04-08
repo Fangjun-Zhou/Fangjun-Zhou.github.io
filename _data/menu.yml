@@ -4,14 +4,14 @@ entries:
       - title: Fishball's development blog
       - title: about
         url: about
-        
+
   - title: all posts
     post_list:
       limit: 5
       show_more: true
       show_more_text: See archive...
       show_more_url: archive.html
-  
+
   - title: unity dots
     post_list:
       limit: 3
@@ -19,3 +19,11 @@ entries:
       show_more: true
       show_more_text: See archive...
       show_more_url: unity-dots.html
+
+  - title: quaternions
+    post_list:
+      limit: 3
+      category: quaternions
+      show_more: true
+      show_more_text: See archive...
+      show_more_url: quaternions.html
