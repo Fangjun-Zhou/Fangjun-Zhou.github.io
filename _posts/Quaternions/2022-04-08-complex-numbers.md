@@ -118,8 +118,8 @@ Matrix multiplication still applies here.
 $$
 \begin{aligned}
     z &= a + bi \\
-    |z| &= \sqrt{a^2 + b^2} \\
-    |z|^2 &= a^2 + b^2 \\
+    \vert z \vert &= \sqrt{a^2 + b^2} \\
+    \vert z \vert ^2 &= a^2 + b^2 \\
     &=
     \begin{vmatrix}
         a & -b \\
@@ -144,11 +144,11 @@ $$
 = a*d - b*c
 $$
 
-Geometrically, this also makes sense. Note that for a complex number $z$, $|z|$ is the length of the vector representing that complex number in the complex plane.
+Geometrically, this also makes sense. Note that for a complex number $z$, $\vert z \vert$ is the length of the vector representing that complex number in the complex plane.
 
 ![picture 1](/Blog/images/2022-04-08-13-57-45-complex-number-1.png)  
 
-Thus, $|z|^2$ should be the area of a square with a width of $|z|$.
+Thus, $\vert z \vert ^2$ should be the area of a square with a width of $\vert z \vert$.
 
 Then observe the geometric definition of matrix determinant.
 
@@ -206,7 +206,7 @@ Here the matrix perspective becomes a little bit tricky. The overall principle i
 $$
 \begin{aligned}
     z &= a + bi \\
-    \frac{1}{z} = z^{-1} &= \frac{z^*}{|z|^2} \\
+    \frac{1}{z} = z^{-1} &= \frac{z^*}{ \vert z \vert ^2} \\
     &= \left(\frac{a}{a^2 + b^2}\right) - \left(\frac{b}{a^2 + b^2}\right)i \\
     &= \frac{1}{a^2 + b^2}
     \begin{bmatrix}
