@@ -29,7 +29,7 @@ One point I want to mention is that I used to think that one entity can belong t
 
 For example, if an entity `E1` has components `A`, `B`, and `C`, it may fall into the archetype `[A]`, `[B]`, `[C]`, `[A, B]`, `[A, C]`, `[B, C]`, `[A, B, C]`.
 
-Why I had this idea is because I thought if there's another entity `E2` with components `A`, `B`, and `D`, they will both fall into archetype `[A, B]`. It sounds easier to search entities with components `A` and `B` (This is also one of the operations that can only be done efficiently and easily in ECS).
+Why I had this idea because I thought if there's another entity `E2` with components `A`, `B`, and `D`, they will both fall into archetype `[A, B]`. It sounds easier to search entities with components `A` and `B` (This is also one of the operations that can only be done efficiently and easily in ECS).
 
 However, it's **completely wrong**!!
 
