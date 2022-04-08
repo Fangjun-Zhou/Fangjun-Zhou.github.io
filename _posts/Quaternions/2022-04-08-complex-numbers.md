@@ -28,10 +28,12 @@ This matrix comes from two facts:
 
 1. Complex number $1$ can be represented by matrix:
 $
-\begin{bmatrix}
-    1 & 0 \\
-    0 & 1
-\end{bmatrix}
+\begin{aligned}
+    \begin{bmatrix}
+        1 & 0 \\
+        0 & 1
+    \end{bmatrix}
+\end{aligned}
 $
 , which is also the identity matrix.
 2. Complex number $i$ can be represented by matrix:
