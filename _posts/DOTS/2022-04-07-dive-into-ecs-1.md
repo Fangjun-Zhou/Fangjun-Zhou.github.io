@@ -10,7 +10,7 @@ As many of you may know, entities are a very important part of the ECS Framework
 
 First, entities are populated by archetypes inside the memory. These archetypes not only describe the feature of entities but also group their data to increase the cache hit rate, which is the ultimate goal of the ECS framework.
 
-Inside archetypes, chucks form the underlying data structure of the archetype. Simply put, chunks are linked list **node** that point to the next chunk and contain contiguous entities data. Note that here I use a linked list node instead of a linked list. This is because the chunk itself uses contiguous memory to store entities data. But chunks are linked for archetype to search.
+Inside archetypes, chucks form the underlying data structure of the archetype. Simply put, chunks are linked list **nodes** or array list **elements** that point to the next chunk and contain contiguous entities data. Note that here I use linked list nodes (array list elements) instead of a linked list (array list). This is because the chunk itself uses contiguous memory to store entities data. But chunks are stored in another data structure for archetype to search.
 
 So why not use an entire array to store all the data inside one archetype? This is also the brightest decision. While entities may be instantiated and destroyed from time to time. Using a long array to manage all the entities may lead to gaps formed by destroyed entities. Using chunks to manage entities gives developers (I mean in Unity) more freedom to manage arrays individually. Which lower cache miss in return. I'll talk about that later.
 
@@ -29,7 +29,7 @@ One point I want to mention is that I used to think that one entity can belong t
 
 For example, if an entity `E1` has components `A`, `B`, and `C`, it may fall into the archetype `[A]`, `[B]`, `[C]`, `[A, B]`, `[A, C]`, `[B, C]`, `[A, B, C]`.
 
-Why I had this idea because I thought if there's another entity `E2` with components `A`, `B`, and `D`, they will both fall into archetype `[A, B]`. It sounds easier to search entities with components `A` and `B` (This is also one of the operations that can only be done efficiently and easily in ECS).
+Why I had this idea because I thought if there's another entity `E2` with components `A`, `B`, and `D`, they will both fall into the archetype `[A, B]`. It sounds easier to search entities with components `A` and `B` (This is also one of the operations that can only be done efficiently and easily in ECS).
 
 However, it's **completely wrong**!!
 
@@ -63,12 +63,28 @@ Entities can be created in four ways:
 
 # Chunks
 
-The DOTS ECS uses chunks to store entities in each archetype. As I mentioned, this is a brilliant idea. First, we can observe the chunk structure[^3]:
+The DOTS ECS uses chunks to store entities in each archetype. As I mentioned, this is a brilliant idea.
+
+First, we can observe the chunk structure[^3]:
 
 ![picture 2](/Blog/images/2022-04-08-01-01-34-chunk-structure.png)  
 
+It can be seen that each archetype is composed of several chunks. For archetypes, new chunks should be able to be created and added to the existed chunk list. But for chunks, the number of entities inside should be fixed.
 
-As we can see, for each archetype, there are several chunks.
+This can be proved in the ECS Scripting API for EntityArchetype[^4]:
+
+> | Name          | Description                                                                              |
+> | :------------ | :--------------------------------------------------------------------------------------- |
+> | ChunkCapacity | The number of entities having this archetype that can fit into a single chunk of memory. |
+> | ChunkCount    | The current number of chunks storing entities having this archetype.                     |
+
+Here, the `ChunkCapacity` describes how many entities can each chunk stores. While the `ChunkCount` is the number of chunks for each archetype.
+
+Interestingly, in the documentation for `ChunkCapacity` [^5], Unity states that
+
+> Capacity is determined by the fixed, 16KB size of the memory blocks allocated by the ECS framework and the total storage size of all the component types in the archetype.
+
+This means that although the `ChunkCapacity` is read-only, it is not a constant. Instead, the physical chunk size in memory is fixed (16KB here). Thus, `ChunkCapacity` will be smaller for larger entities. It can also be deducted that smaller entities may have better performance in loops.
 
 ---
 {: data-content="footnotes"}
@@ -78,3 +94,7 @@ As we can see, for each archetype, there are several chunks.
 [^2]: [ECS Core Introduction](https://docs.unity3d.com/Packages/com.unity.entities@0.50/manual/ecs_core.html)
 
 [^3]: [ECS Core Introduction](https://docs.unity3d.com/Packages/com.unity.entities@0.50/manual/ecs_core.html)
+
+[^4]: [ECS Scripting API - Struct EntityArchetype](https://docs.unity3d.com/Packages/com.unity.entities@0.50/api/Unity.Entities.EntityArchetype.html)
+
+[^5]: [ECS Scripting API - Property ChunkCapacity](https://docs.unity3d.com/Packages/com.unity.entities@0.50/api/Unity.Entities.EntityArchetype.ChunkCapacity.html#Unity_Entities_EntityArchetype_ChunkCapacity)
