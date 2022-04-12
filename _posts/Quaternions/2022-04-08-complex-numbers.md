@@ -268,6 +268,43 @@ And since $\frac{d}{d\theta} e^{i\theta}$ represents the rate of change of $e^{i
 
 When $\theta = \frac{\pi}{2}$, the vector rotate path length should be $\frac{\pi}{2}$. So the $e^{i * \frac{\pi}{2}} = i$ which is also (0, 1).
 
+Note that $\vert e^{i \theta} \vert = 1$ since it falls on the unit circle.
+
+For a general polar form vector, we need both $r$ and $\theta$.
+
+## Product
+
+$$
+\begin{aligned}
+    z &= re^{i\theta} \\
+    w &= se^{i\phi} \\
+    zw &= rse^{(\theta + \phi)i} \\
+    &= rs(cos(\theta + \phi) + sin(\theta + \phi)i)
+\end{aligned}
+$$
+
+The polar form complex number production obeys basic exponential multiplication rules. But it also shows the fact that when two complex number are multiplied, their magnitude get multiplied and angle are added.
+
+## Quotient
+
+$$
+\begin{aligned}
+    \frac{z}{w} &= \frac{r}{s}e^{\theta - \phi} \\
+    &= \frac{r}{s}(cos(\theta - \phi) + sin(\theta - \phi)i)
+\end{aligned}
+$$
+
+## Rotors
+
+$$
+\begin{aligned}
+    \boldsymbol{R}_\theta &= cos(\theta) + sin(\theta)i \\
+    \boldsymbol{R}_\theta^{\div} &= cos(\theta) - sin(\theta)i
+\end{aligned}
+$$
+
+The product and quotient rules lead to the idea of rotors. While a complex number with a magnitude of 1 will not change the magnitude of the target vector. But the angle is presumed as the rotated angle.
+
 ---
 {: data-content="footnotes"}
 
