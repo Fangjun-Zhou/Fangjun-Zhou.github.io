@@ -39,12 +39,12 @@ $$
     a \in \mathbb{R}
     bi \in \mathbb{I}
     z \in \mathbb{C} \\
-    &= a * 
+    &= a \cdot 
     \begin{bmatrix}
         1 & 0 \\
         0 & 1
     \end{bmatrix}
-    + b *
+    + b \cdot 
     \begin{bmatrix}
         0 & -1 \\
         1 & 0
@@ -141,7 +141,7 @@ $$
     a & b \\
     c & d
 \end{vmatrix}
-= a*d - b*c
+= a \cdot d - b \cdot c
 $$
 
 Geometrically, this also makes sense. Note that for a complex number $z$, $\vert z \vert$ is the length of the vector representing that complex number in the complex plane.
@@ -260,13 +260,13 @@ $$
 
 The formula $e^{i\theta} = cos(\theta) + sin(\theta)i$ is quite complecated to remember. But a tricky way is to use derivative[^1].
 
-First, start with $\theta = 0$ , and $e^{i*0} = e^0 = 1$ . Then take the derivative of $e^{i\theta}$ : $\frac{d}{d\theta} e^{i\theta} = i*e^{i\theta}$ .
+First, start with $\theta = 0$, and $e^{i \cdot 0} = e^0 = 1$. Then take the derivative of $e^{i\theta}$: $\frac{d}{d\theta} e^{i\theta} = i \cdot e^{i\theta}$.
 
-Since $i$ can always rotate the value 90 degrees counterclockwise, now we know that for each $\theta$ , $\frac{d}{d\theta} e^{i\theta}$ is 90 degrees perpendicular to the original value.
+Since $i$ can always rotate the value 90 degrees counterclockwise, now we know that for each $\theta$, $\frac{d}{d\theta} e^{i\theta}$ is 90 degrees perpendicular to the original value.
 
-And since $\frac{d}{d\theta} e^{i\theta}$ represents the rate of change of $e^{i\theta}$ , so it can be known that $e^{i\theta}$ falls on a circle certer at (0, 0), and have radius of 1, rotating counterclockwise with speed of 1.
+And since $\frac{d}{d\theta} e^{i\theta}$ represents the rate of change of $e^{i\theta}$, so it can be known that $e^{i\theta}$ falls on a circle certer at (0, 0), and have radius of 1, rotating counterclockwise with speed of 1.
 
-When $\theta = \frac{\pi}{2}$ , the vector rotate path length should be $\frac{\pi}{2}$. So the $e^{i * \frac{\pi}{2}} = i$ which is also (0, 1).
+When $\theta = \frac{\pi}{2}$, the vector rotate path length should be $\frac{\pi}{2}$. So the $e^{i * \frac{\pi}{2}} = i$ which is also (0, 1).
 
 ---
 {: data-content="footnotes"}
