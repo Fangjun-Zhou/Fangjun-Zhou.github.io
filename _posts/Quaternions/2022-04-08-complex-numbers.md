@@ -235,4 +235,40 @@ $$
 \end{aligned}
 $$
 
-- TODO: Finish this.
+# Complex Plane
+
+## Complex Number in Complex Plane
+
+$$
+\begin{aligned}
+    z &= a + bi \\
+    \vert z \vert &= \sqrt{a^2 + b^2}
+\end{aligned}
+$$
+
+## Polar Form
+
+$$
+\begin{aligned}
+    e^{i\theta} &= cos(\theta) + sin(\theta)i \\
+    z &= re^{i\theta} \\
+    &= r(cos(\theta) + sin(\theta)i) \\
+    r &= \vert z \vert \\
+    \theta &= arg(z)
+\end{aligned}
+$$
+
+The formula $e^{i\theta} = cos(\theta) + sin(\theta)i$ is quite complecated to remember. But a tricky way is to use derivative[^1].
+
+First, start with $\theta = 0$, and $e^{i*0} = e^0 = 1$. Then take the derivative of $e^{i\theta}$: $\frac{d}{d\theta} e^{i\theta} = i*e^{i\theta}$.
+
+Since $i$ can always rotate the value 90 degrees counterclockwise, now we know that for each $\theta$, $\frac{d}{d\theta} e^{i\theta}$ is 90 degrees perpendicular to the original value.
+
+And since $\frac{d}{d\theta} e^{i\theta}$ represents the rate of change of $e^{i\theta}$, so it can be known that $e^{i\theta}$ falls on a circle certer at (0, 0), and have radius of 1, rotating counterclockwise with speed of 1.
+
+When $\theta = \frac{\pi}{2}$, the vector rotate path length should be $\frac{\pi}{2}$. So the $e^{i * \frac{\pi}{2}} = i$ which is also (0, 1).
+
+---
+{: data-content="footnotes"}
+
+[^1]: [3B1B - e^(iπ) in 3.14 minutes, using dynamics](https://www.youtube.com/watch?v=v0YEaeIClKY&ab_channel=3Blue1Brown)
