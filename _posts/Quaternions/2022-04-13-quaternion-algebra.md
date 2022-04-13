@@ -98,6 +98,62 @@ $$
 
 Proof:
 
-![picture 1](/Blog/images/2022-04-13-13-21-56-pure-quaternion-product-1.jpg)  
+$$
+\begin{aligned}
+    q_aq_b &= [0, \textbf{a}][0, \textbf{b}] \\
+    &= (0 + a_xi + a_yj + a_zk)(0 + b_xi + b_yj + b_zk) \\
+    &= (0 - a_xb_x - a_yb_y - a_zb_z) + (a_yb_z - a_zb_y)i + \\
+    & \qquad (a_xb_z - a_zb_x)j + (a_xb_y - a_yb_x)k
+\end{aligned}
+$$
 
-![picture 2](/Blog/images/2022-04-13-13-24-12-pure-quaternion-product-2.jpg)  
+Note that in the red part, we first use $a_yjb_zk = a_yb_zi$, and then use $a_zkb_yj = -a_zb_yi$. This gives $(a_yb_z - a_zb_y)i$. The same process also applies to other terms.
+
+Recall that for two vector 
+$$
+\textbf{a} = <a_x, a_y, a_z>, \textbf{b} = <b_x, b_y, b_z>
+$$
+
+The cross product of these two vectors are:
+
+$$
+\begin{aligned}
+    \textbf{a} \times \textbf{b} &= 
+    \begin{vmatrix}
+        i & j & k \\
+        a_x & a_y & a_z \\
+        b_x & b_y & b_z
+    \end{vmatrix} \\
+    &=
+    \begin{vmatrix}
+        a_y & a_z \\
+        b_y & b_z
+    \end{vmatrix} i
+    +
+    \begin{vmatrix}
+        a_x & a_z \\
+        b_x & b_z
+    \end{vmatrix} j
+    +
+    \begin{vmatrix}
+        a_x & a_y \\
+        b_x & b_y
+    \end{vmatrix} k \\
+    &= (a_yb_z - a_zb_y)i + (a_xb_z - a_zb_x)j + (a_xb_y - a_yb_x)k
+\end{aligned}
+$$
+
+And the dot product of these two vectors are:
+
+$$
+\textbf{a} \cdot \textbf{b} = a_xb_x + a_yb_y + a_zb_z
+$$
+
+Thus
+
+$$
+\begin{aligned}
+    q_aq_b &= 0 - \textbf{a} \cdot \textbf{b} + \textbf{a} \times \textbf{b} \\
+    &= [-\textbf{a} \cdot \textbf{b}, \textbf{a} \times \textbf{b}]
+\end{aligned}
+$$
