@@ -30,12 +30,12 @@ For a quaternion, there are three representation
 $$
 \begin{aligned}
     q &= s + xi + yj + zk \\
-    q &= s + \bold{v} \\
-    q &= [s, \bold{v}]
+    q &= s + \textbf{v} \\
+    q &= [s, \textbf{v}]
 \end{aligned}
 $$
 
-Where $s, x, y, z \in \mathbb{R}$, and $\bold{v} \in \mathbb{R}^3$
+Where $s, x, y, z \in \mathbb{R}$, and $\textbf{v} \in \mathbb{R}^3$
 
 # Math Operations
 
@@ -43,9 +43,9 @@ Where $s, x, y, z \in \mathbb{R}$, and $\bold{v} \in \mathbb{R}^3$
 
 $$
 \begin{aligned}
-    q_a &= [s_a, \bold{a}] \\
-    q_b &= [s_b, \bold{b}] \\
-    q_a \pm q_b &= [s_a \pm s_b, \bold{a} \pm \bold{b}]
+    q_a &= [s_a, \textbf{a}] \\
+    q_b &= [s_b, \textbf{b}] \\
+    q_a \pm q_b &= [s_a \pm s_b, \textbf{a} \pm \textbf{b}]
 \end{aligned}
 $$
 
@@ -54,7 +54,7 @@ $$
 The basic quaternion multiplication is:
 
 $$
-[s_a, \bold{a}][s_b, \bold{b}] = [s_as_b - a \cdot b, s_a \bold{b} + s_b \bold{a} + \bold{a} \times \bold{b}]
+[s_a, \textbf{a}][s_b, \textbf{b}] = [s_as_b - a \cdot b, s_a \textbf{b} + s_b \textbf{a} + \textbf{a} \times \textbf{b}]
 $$
 
 The regular way to prove this is to expand two quaternions separately and perform the multiplication. But an easier way is to use an additive form of quaternion which I may mention later so I won't prove it here.
@@ -63,9 +63,9 @@ The regular way to prove this is to expand two quaternions separately and perfor
 
 $$
 \begin{aligned}
-    q &= [s, \bold{v}] \\
-    \lambda q &= \lambda [s, \bold{v}] \\
-    \lambda q &= [\lambda s, \lambda \bold{v}]
+    q &= [s, \textbf{v}] \\
+    \lambda q &= \lambda [s, \textbf{v}] \\
+    \lambda q &= [\lambda s, \lambda \textbf{v}]
 \end{aligned}
 $$
 
@@ -91,8 +91,8 @@ $$
 
 $$
 \begin{aligned}
-    q_aq_b &= [0, \bold{a}][0, \bold{b}] \\
-    &= [- \bold{a} \cdot \bold{b}, \bold{a} \times \bold{b}]
+    q_aq_b &= [0, \textbf{a}][0, \textbf{b}] \\
+    &= [- \textbf{a} \cdot \textbf{b}, \textbf{a} \times \textbf{b}]
 \end{aligned}
 $$
 
