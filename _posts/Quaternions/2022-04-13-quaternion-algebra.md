@@ -114,7 +114,7 @@ $$
 \textbf{a} = <a_x, a_y, a_z>, \textbf{b} = <b_x, b_y, b_z>
 $$
 
-The cross product of these two vectors are:
+The cross product of these two vectors is:
 
 $$
 \begin{aligned}
@@ -143,7 +143,7 @@ $$
 \end{aligned}
 $$
 
-And the dot product of these two vectors are:
+And the dot product of these two vectors is:
 
 $$
 \textbf{a} \cdot \textbf{b} = a_xb_x + a_yb_y + a_zb_z
@@ -157,3 +157,56 @@ $$
     &= [-\textbf{a} \cdot \textbf{b}, \textbf{a} \times \textbf{b}]
 \end{aligned}
 $$
+
+## Unit Quaternion
+
+A unit quaternion comprises a zero scalar and a **unit vector**.
+
+$$
+q = v\hat{\textbf{v}}, \text{where } v = \vert \textbf{v} \vert \text{ and } \vert \hat{\textbf{v}} \vert = 1
+$$
+
+## Additive Form of Quaternion
+
+Two quaternions can be represented by two of their components added together.
+
+$$
+\begin{aligned}
+    q_a &= [s_a, 0] + [0, \textbf{a}] \\
+    q_b &= [s_b, 0] + [0, \textbf{b}] \\
+    q_aq_b &= ([s_a, 0] + [0, \textbf{a}])([s_b, 0] + [0, \textbf{b}])\\
+    &= [s_a, 0][s_b, 0] + [s_a,0][0, \textbf{b}] + [0, \textbf{a}][s_b, 0] + [0, \textbf{a}][0, \textbf{b}]
+\end{aligned}
+$$
+
+Here, note that $[s_a, 0][s_b, 0]$ is two scalar multiplied together, so $[s_a, 0][s_b, 0] = s_as_b$.
+
+$[s_a,0][0, \textbf{b}]$ is multiplying a quaternion by a scalar, so $[s_a,0][0, \textbf{b}] = [0, s_a \textbf{b}]$. Same rule also applies to $[0, \textbf{a}][s_b, 0]$.
+
+Finally, $[0, \textbf{a}][0, \textbf{b}] = [-\textbf{a} \cdot \textbf{b}, \textbf{a} \times \textbf{b}]$ can be known based on pure quaternion product we deducted above.
+
+Thus,
+
+$$
+\begin{aligned}
+    q_a &= [s_a, 0] + [0, \textbf{a}] \\
+    q_b &= [s_b, 0] + [0, \textbf{b}] \\
+    q_aq_b &= ([s_a, 0] + [0, \textbf{a}])([s_b, 0] + [0, \textbf{b}])\\
+    &= [s_a, 0][s_b, 0] + [s_a,0][0, \textbf{b}] + [0, \textbf{a}][s_b, 0] + [0, \textbf{a}][0, \textbf{b}] \\
+    &= [s_as_b, 0] + [0, s_a\textbf{b}] + [0, s_b\textbf{a}] + [-\textbf{a} \cdot \textbf{b}, \textbf{a} \times \textbf{b}] \\
+    &= [s_as_b - \textbf{a} \cdot \textbf{b}, s_a\textbf{b} + s_b\textbf{a} + \textbf{a} \times \textbf{b}]
+\end{aligned}
+$$
+
+## Binary Form of Quaternion
+
+$$
+\begin{aligned}
+    a &= [s, \textbf{v}] \\
+    &= [s, 0] + [0, \textbf{v}] \\
+    &= [s, 0] + v[0, \hat{\textbf{v}}] \\
+    &= s + v\hat{q}
+\end{aligned}
+$$
+
+Here, $\hat{q}$ is the unit quaternion $[0, \hat{\textbf{v}}]$. Unlike $i$ in complex number representation, $\hat{q}$ is not a constant.
