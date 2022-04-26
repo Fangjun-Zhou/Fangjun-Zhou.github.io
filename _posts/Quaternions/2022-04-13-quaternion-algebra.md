@@ -210,3 +210,45 @@ $$
 $$
 
 Here, $\hat{q}$ is the unit quaternion $[0, \hat{\textbf{v}}]$. Unlike $i$ in complex number representation, $\hat{q}$ is not a constant.
+
+## Conjugate
+
+The idea of conjugate comes from the binary form and conjugate of complex number. The conjugate of a quaternion $q = [s, \textbf{v}]$ is $q^\ast = [s, -\textbf{v}]$
+
+### Conjugate Properties
+
+---
+
+A quaternion multiply with its conjugate will eleminate its vector part:
+
+$$
+\begin{aligned}
+    qq^\ast &= [s, \textbf{v}][s, -\textbf{v}] \\
+    &= [s^2 - (-\textbf{v}) \cdot \textbf{v}, s\textbf{v} - s\textbf{v} + \textbf{v} \times (-\textbf{v})] \\
+    &= [s^2 + v^2, 0]
+\end{aligned}
+$$
+
+---
+
+$$
+qq^\ast = q^\ast q
+$$
+
+---
+
+$$
+\begin{aligned}
+    (q_aq_b)^\ast &= q_b^\ast q_a^\ast \\
+    q_a &= [s_a, \textbf{a}] \\
+    q_b &= [s_b, \textbf{b}] \\
+    q_aq_b &= [s_a, \textbf{a}][s_b, \textbf{b}] \\
+    &= [s_as_b - \textbf{a} \cdot \textbf{b}, s_a\textbf{b} + s_b\textbf{a} + \textbf{a} \times \textbf{b}] \\
+    (q_aq_b)^\ast &= [s_as_b - \textbf{a} \cdot \textbf{b}, -s_a\textbf{b} - s_b\textbf{a} - \textbf{a} \times \textbf{b}] \\
+    q_a^\ast &= [s_a, -\textbf{a}] \\
+    q_b^\ast &= [s_b, -\textbf{b}] \\
+    q_b^\ast q_a^\ast &= [s_bs_a - \textbf{b} \cdot \textbf{a}, -s_b\textbf{a} - s_a\textbf{b} + (-\textbf{b}) \times (-\textbf{a})] \\
+    &= [s_bs_a - \textbf{b} \cdot \textbf{a}, -s_b\textbf{a} - s_a\textbf{b} + \textbf{b} \times \textbf{a}] \\
+    &= [s_as_b - \textbf{a} \cdot \textbf{b}, -s_a\textbf{b} - s_b\textbf{a} - \textbf{a} \times \textbf{b}]
+\end{aligned}
+$$
