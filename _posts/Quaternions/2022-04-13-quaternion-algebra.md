@@ -219,7 +219,7 @@ The idea of conjugate comes from the binary form and conjugate of complex number
 
 ---
 
-A quaternion multiply with its conjugate will eleminate its vector part:
+A quaternion multiply with its conjugate will eliminate its vector part:
 
 $$
 \begin{aligned}

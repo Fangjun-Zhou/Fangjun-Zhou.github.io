@@ -4,11 +4,11 @@ title: Fucking Cross Product
 category: quaternions
 ---
 
-I'm fucked up with cross product. So I decide to write this shit.
+I'm fucked up with cross-product. So I decided to write this shit.
 
 # Defination
 
-The basic defination of cross product comes from matrix determinant. Write i, j, and k in the first row and two corresponding vector in second and third row.
+The basic definition of cross-product comes from matrix determinants. Write i, j, and k in the first row and two corresponding vectors in the second and third row.
 
 $$
 \begin{aligned}
@@ -37,7 +37,7 @@ $$
 \end{aligned}
 $$
 
-From this defination, it's obvious that order matters in cross product.
+From this definition, it's obvious that order matters in the cross-product.
 
 $$
 \begin{aligned}
@@ -76,7 +76,7 @@ $$
 
 # Direction
 
-The **right hand rule** cross product use is:
+The **right-hand rule** cross-product use is:
 
 ![picture 1](/Blog/images/2022-04-26-16-10-59-cross-product.png)  
 
