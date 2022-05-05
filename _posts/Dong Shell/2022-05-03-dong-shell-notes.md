@@ -43,7 +43,7 @@ WIFCONTINUED(status)
 
 ### options
 
-The options are passed by flags. 0 means no options are used. If one ore more options are needed, use bit-wise OR operation to select them.
+The options are passed by flags. 0 means no options are used. If one or more options are needed, use bit-wise OR operation to select them.
 
 ```
 WNOHANG
@@ -56,10 +56,76 @@ WCONTINUED (since Linux 2.6.10)
     also return if a stopped child has been resumed by delivery of SIGCONT.
 ```
 
+## execv(const char *path, char *const argv[]);
+
+After `fork` the child process should call `execv` to start loading and executing the target program. But the arguments of `execv` are a little bit tricky.
+
+Another blog of mine *C & C++ Constant Pointers* covered the difference between `const char *`, `char const *`, `char *const`, and `char *const *`. I will not cover it here.
+
+The first one is the path of executable. The second one is all the arguments passed in.
+
+Note that **there is no argc for the argument count**. So how can execv know how many arguments are there? It turns out developers **need to place a NULL pointer at the end of array**. This is important, or it will lead to undetermined behavior. If NULL pointers are not set correctly, it is always the case that the first `execv` call will success and following call may failed because the recycled stack leave some garbage data in the memory.
+
+An example of calling `execv` looks like this:
+
+If you use `/bin/ls -la` in regular shell, you should pass these parameters to execv:
+
+```c++
+std::string path = "/bin/ls";
+char *const argv[] = {"/bin/ls", "-la", NULL};
+execv(path.c_str(), argv);
+```
+
 # Some C++ Shit
 
 ## std::string size and length
 
-They are working the same way, both return the number of character in the string.
+They are working the same way, both return the number of characters in the string.
 
 ## std::string split
+
+In `CommandHandler` namespace, there is a `CommandHandler::SplitCommand` function that takes a string command and split it by space or tabs.
+
+To do so, I used three major functions in `std::string`. The first one is `find`, which takes a string and finds its starting position of it.
+
+The second one is `substr`, which takes a start point and length, returning the substring.
+
+The last one is `erase`, which takes a start point and length, wiping all the characters in the range.
+
+```c++
+// Split base on delimiters.
+while (true)
+{
+    // Find the smallest delimiter and its position.
+    delimiterLoc = std::string::npos;
+    for (int i = 0; i < delimiters.size(); i++)
+    {
+        size_t newVal = command.find(delimiters[i]);
+        if (newVal < delimiterLoc)
+        {
+            delimiter = delimiters[i];
+            delimiterLoc = newVal;
+        }
+    }
+
+    if (delimiterLoc == std::string::npos)
+        break;
+
+    token = command.substr(0, delimiterLoc);
+    command.erase(0, delimiterLoc + delimiter.length());
+
+    if (token.length() != 0)
+    {
+        commandList->push_back(token);
+    }
+}
+```
+
+In the while loop, the first thing to do is to find the closest delimiter to the front of the string. Thus, `delimiterLoc` is initialized to `std::string::npos`, which is the largest value of `size_t` [^1].
+
+In this case, finding the smallest possible `delimiterLoc` will give us the location to strip the substring.
+
+---
+{: data-content="footnotes"}
+
+[^1]: [cpp reference std::string::npos](https://www.cplusplus.com/reference/string/string/npos/)
