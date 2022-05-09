@@ -64,7 +64,7 @@ Another blog of mine *C & C++ Constant Pointers* covered the difference between 
 
 The first one is the path of executable. The second one is all the arguments passed in.
 
-Note that **there is no argc for the argument count**. So how can execv know how many arguments are there? It turns out developers **need to place a NULL pointer at the end of array**. This is important, or it will lead to undetermined behavior. If NULL pointers are not set correctly, it is always the case that the first `execv` call will success and following call may failed because the recycled stack leave some garbage data in the memory.
+Note that **there is no argc for the argument count**. So how can execv know how many arguments are there? It turns out developers **need to place a NULL pointer at the end of array**. This is important, or it will lead to undetermined behavior. If NULL pointers are not set correctly, it is always the case that the first `execv` call will succeed and the following call may fail because the recycled stack leaves some garbage data in the memory.
 
 An example of calling `execv` looks like this:
 

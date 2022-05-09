@@ -28,8 +28,8 @@ Now, other examples should be clear.
 
 ![picture 1](/Blog/images/2022-05-04-22-58-27-char-const.png)  
 
-Just like the graph shows above, `char *const *` can be used to pass argument to a new program. `main` function accepts these arguments, and new arguments can aslo be passed through APIs like `execv`.
+Just like the graph shows above, `char *const *` can be used to pass arguments to a new program. `main` function accepts these arguments, and new arguments can also be passed through APIs like `execv`.
 
 # Additional Tips
 
-`char const*` and `const char*` are the same. Just in case there are some developers have different code styles.
+`char const*` and `const char*` are the same. Just in case some developers have different code styles.
