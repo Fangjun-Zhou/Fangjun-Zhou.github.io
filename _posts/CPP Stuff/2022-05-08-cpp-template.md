@@ -97,13 +97,13 @@ When compiling the `IntNode.hpp` and `IntNode.cpp`, a relocatable file will be g
 
 When performing the static linking, two major stages are performed[^2]:
 
-1. **Symbol resolution**: The linker will try to find all the definition and references. The linker requires all the references have **exactly one definition**. Notice that the the linker requires the definition instead of declaration, and the number of dedication cannot be 0 or greater than 1.
+1. **Symbol resolution**: The linker will try to find all the definitions and references. The linker requires all the references have **exactly one definition**. Notice that the linker requires the definition instead of declaration, and the number of dedications cannot be 0 or greater than 1.
    
-2. **Relocation**: After finding all the definitions, the linker can relocate the function reference by relocating the reference jump address the function defined in other source code. During this process, the linker may also allocate memory for those function definitions.
+2. **Relocation**: After finding all the definitions, the linker can relocate the function reference by relocating the reference jump address to the function defined in other source code. During this process, the linker may also allocate memory for those function definitions.
 
 In the example, the `IntNode` constructor, destructor, `SetNext` method, and `SetValue` method in the `main.cpp` source code need to be reallocated. But in the symbol resolution stage, the linker will try to find the definition (implementation) of these functions at first. And it can successfully find them in the `IntNode.cpp` source code.
 
-# How Template Lead to Problems
+# How Templates Lead to Problems
 
 When using template like this:
 
@@ -136,7 +136,7 @@ LinkedListNode<T>::LinkedListNode(T value){
 // ...
 ```
 
-The compiler will finish compiling all the functions into machine code and corresponding symbol table during compile stage. No original source code will be kept.
+The compiler will finish compiling all the functions into machine code and the corresponding symbol table during compile stage. No original source code will be kept.
 
 However, in the `main.cpp`:
 
@@ -151,13 +151,13 @@ int main(int, char **){
 
 the main function is using specifically `LinkedListNode<int>` constructor and destructor.
 
-So during linking stage, the linker will try to find this definition while no such constructor exists in the relocatable object file. So an unreference definition error will be raised by linker.
+So during the linking stage, the linker will try to find this definition while no such constructor exists in the relocatable object file. So an unreferenced definition error will be raised by the linker.
 
 # Solution
 
 ## 1. Explicitly Define Template Implementation
 
-One solution to the problem mentioned above is listing all the possible implementation of the template at the end of `LinkedListNode.cpp` file [^3].
+One solution to the problem mentioned above is listing all the possible implementations of the template at the end of `LinkedListNode.cpp` file [^3].
 
 ```c++
 // "LinkedListNode.cpp"
@@ -172,21 +172,21 @@ template class LinkedListNode<int>;
 template class LinkedListNode<char>;
 ```
 
-By doing this, the template class and executable can still be compiled separately. If you are using shared library compiling option (dynamic linking during load stage), you can make the executable as small as possible.
+By doing this, the template class and executable can still be compiled separately. If you are using the shared library compiling option (dynamic linking during the load stage), you can make the executable as small as possible.
 
-But doing this is also complicated and wastes the flexibility of template.
+But doing this is also complicated and wastes the flexibility of the template.
 
 ## 2. Implement in Header File
 
-The second option is implementing everything inside header file. Thus, the code will be included in the required module instead of compiled into a relocatable object file and linked afterwords.
+The second option is implementing everything inside the header file. Thus, the code will be included in the required module instead of compiled into a relocatable object file and linked afterwords.
 
-However, this can also be problematic. Since doing so will increase the size of final executable. And the implementation of the code will be in the same place as the declaration.
+However, this can also be problematic. Since doing so will increase the size of the final executable. And the implementation of the code will be in the same place as the declaration.
 
 ## 3. Include Implementation in Header File
 
-The final solution is used by my project currently[^4]: including the implementation inside header file.
+The final solution is used by my project currently[^4]: including the implementation inside the header file.
 
-This is similar to solution 2 from the perspective of final result. But seperating the implementation with declaration can lead to a clear project structure.
+This is similar to solution 2 from the perspective of the final result. But separating the implementation from the declaration can lead to a clear project structure.
 
 ---
 {: data-content="footnotes"}
