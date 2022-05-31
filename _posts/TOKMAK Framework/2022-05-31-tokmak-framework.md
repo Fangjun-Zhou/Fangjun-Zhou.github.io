@@ -16,24 +16,34 @@ Simply put, TOKMAK Framework can be a generalized Unity framework to help you be
 
 ## com.fintokmak.universaleventsystem
 
-GitHub repository: https://github.com/Fangjun-Zhou/TOKMAK-Universal-Event
-Package Manager Supported GitHub URL: https://github.com/Fangjun-Zhou/TOKMAK-Universal-Event-Release.git
-NPM Registry: https://www.npmjs.com/package/com.fintokmak.universaleventsystem
-**Documentation:** https://fangjun-zhou.github.io/TOKMAK-Universal-Event/
+[GitHub repository](https://github.com/Fangjun-Zhou/TOKMAK-Universal-Event)
+
+[Package Manager Supported GitHub URL](https://github.com/Fangjun-Zhou/TOKMAK-Universal-Event-Release.git)
+
+[NPM Registry](https://www.npmjs.com/package/com.fintokmak.universaleventsystem)
+
+[**Documentation**](https://fangjun-zhou.github.io/TOKMAK-Universal-Event/)
 
 ## com.fintokmak.tokmakuistack
 
-GitHub repository: https://github.com/Fangjun-Zhou/TOKMAK-UI-Stack
-Package Manager Supported GitHub URL: https://github.com/Fangjun-Zhou/TOKMAK-UI-Stack-Release.git
-NPM Registry: https://www.npmjs.com/package/com.fintokmak.tokmakuistack
-**Documentation:** https://fangjun-zhou.github.io/TOKMAK-UI-Stack/
+[GitHub repository](https://github.com/Fangjun-Zhou/TOKMAK-UI-Stack)
+
+[Package Manager Supported GitHub URL](https://github.com/Fangjun-Zhou/TOKMAK-UI-Stack-Release.git)
+
+[NPM Registry](https://www.npmjs.com/package/com.fintokmak.tokmakuistack)
+
+[**Documentation**](https://fangjun-zhou.github.io/TOKMAK-UI-Stack/)
+
 
 ## com.fintokmak.timelinesystem
 
-GitHub repository: https://github.com/Fangjun-Zhou/TOKMAK-Timeline-System
-Package Manager Supported GitHub URL: https://github.com/Fangjun-Zhou/TOKMAK-Timeline-System-Release.git
-NPM Registry: https://www.npmjs.com/package/com.fintokmak.timelinesystem
-**Documentation:** https://fangjun-zhou.github.io/TOKMAK-Timeline-System/
+[GitHub repository](https://github.com/Fangjun-Zhou/TOKMAK-Timeline-System)
+
+[Package Manager Supported GitHub URL](https://github.com/Fangjun-Zhou/TOKMAK-Timeline-System-Release.git)
+
+[NPM Registry](https://www.npmjs.com/package/com.fintokmak.timelinesystem)
+
+[**Documentation**](https://fangjun-zhou.github.io/TOKMAK-Timeline-System/)
 
 # How to Install TOKMAK Framework
 
