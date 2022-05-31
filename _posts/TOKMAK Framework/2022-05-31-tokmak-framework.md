@@ -16,34 +16,34 @@ Simply put, TOKMAK Framework can be a generalized Unity framework to help you be
 
 ## com.fintokmak.universaleventsystem
 
-[GitHub repository](https://github.com/Fangjun-Zhou/TOKMAK-Universal-Event)
+[**Documentation**](https://fangjun-zhou.github.io/TOKMAK-Universal-Event/)
 
-[Package Manager Supported GitHub URL](https://github.com/Fangjun-Zhou/TOKMAK-Universal-Event-Release.git)
+[GitHub repository](https://github.com/Fangjun-Zhou/TOKMAK-Universal-Event)
 
 [NPM Registry](https://www.npmjs.com/package/com.fintokmak.universaleventsystem)
 
-[**Documentation**](https://fangjun-zhou.github.io/TOKMAK-Universal-Event/)
+Package Manager Supported GitHub URL: https://github.com/Fangjun-Zhou/TOKMAK-Universal-Event-Release.git
 
 ## com.fintokmak.tokmakuistack
 
-[GitHub repository](https://github.com/Fangjun-Zhou/TOKMAK-UI-Stack)
+[**Documentation**](https://fangjun-zhou.github.io/TOKMAK-UI-Stack/)
 
-[Package Manager Supported GitHub URL](https://github.com/Fangjun-Zhou/TOKMAK-UI-Stack-Release.git)
+[GitHub repository](https://github.com/Fangjun-Zhou/TOKMAK-UI-Stack)
 
 [NPM Registry](https://www.npmjs.com/package/com.fintokmak.tokmakuistack)
 
-[**Documentation**](https://fangjun-zhou.github.io/TOKMAK-UI-Stack/)
+Package Manager Supported GitHub URL: https://github.com/Fangjun-Zhou/TOKMAK-UI-Stack-Release.git
 
 
 ## com.fintokmak.timelinesystem
 
-[GitHub repository](https://github.com/Fangjun-Zhou/TOKMAK-Timeline-System)
+[**Documentation**](https://fangjun-zhou.github.io/TOKMAK-Timeline-System/)
 
-[Package Manager Supported GitHub URL](https://github.com/Fangjun-Zhou/TOKMAK-Timeline-System-Release.git)
+[GitHub repository](https://github.com/Fangjun-Zhou/TOKMAK-Timeline-System)
 
 [NPM Registry](https://www.npmjs.com/package/com.fintokmak.timelinesystem)
 
-[**Documentation**](https://fangjun-zhou.github.io/TOKMAK-Timeline-System/)
+Package Manager Supported GitHub URL: https://github.com/Fangjun-Zhou/TOKMAK-Timeline-System-Release.git
 
 # How to Install TOKMAK Framework
 
@@ -55,7 +55,7 @@ The easiest way to install TOKMAK-Framework in your project is using the npm reg
 
 Add following registry to UPM `manifest.json` config file:
 
-```json
+```
 {
     "name": "FinTOKMAK",
     "url": "https://registry.npmjs.org",
