@@ -27,3 +27,11 @@ entries:
       show_more: true
       show_more_text: See archive...
       show_more_url: quaternions.html
+
+  - title: operating system
+    post_list:
+      limit: 3
+      category: operating-system
+      show_more: true
+      show_more_text: See archive...
+      show_more_url: operating-system.html
