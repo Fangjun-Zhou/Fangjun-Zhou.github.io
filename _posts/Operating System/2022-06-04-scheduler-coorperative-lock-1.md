@@ -260,6 +260,46 @@ However, a context switch happened. T2 is not scheduled, and T2 called `mutex_lo
 
 I'm not sure if this is an expected behavior. Or, the `fastpath`, by design, is used to provide such quick acquire action and save the resource to perform extra context switches.
 
+# Scheduler Subversion and Lock Opportunity
+
+## Scheduler Subversion
+
+According to Yuvraj Pate[^5], modern locks can lead to scheduler subversion issue since when two process are acquiring the same lock, the one who hold the lock for a longer time will get more CPU resource.
+
+In the example of mutex lock, one thread T0 can completely starve T1, since the non-critical section time is so short that T0 can immediately acquire the lock once it release it.
+
+## Lock Opportunity
+
+In the paper, a variable called Lock Opportunity (LOT) is introduced to measure how many CPU resource one thread use for a lock.
+
+$$
+LOT(i) = \sum Critical \_ Section(i) + \sum Lock \_ Idle \_ Time
+$$
+
+The author mentioned that when the lock is acquired by one thread, no thread have the opportunity of acquiring the lock beside the thread it self. When a lock is idle, any thread have the opportunity to acquire the lock.
+
+For 4 examples given in the article, lock opportunities for each thread can be calculated:
+
+![picture 1](/Blog/images/2022-06-05-03-55-16-lock-usage-example.png)  
+
+![picture 2](/Blog/images/2022-06-05-03-55-51-lock-usage-stat.png)  
+
+In the table, Jain's fairness index is calculated. This index is based on following formula.
+
+$$
+FairnessIndex = \frac{(\sum x_i)^2}{n \sum x_i^2}
+$$
+
+Where $x_i = T_i/O_i$ and $T_i$ is the LOT for current thread, $O_i$ is the sum of LOT for all threads.
+
+For example, in Mutex column, T0 have LOT of 20, T1 have LOT of 1
+
+$$
+FairnessIndex_{Mutex} = \frac{(\frac{20}{21} + \frac{1}{21})^2}{2 * ({\frac{20}{21}}^2 + {\frac{1}{21}}^2)} = 0.54
+$$
+
+From this table, it is clear that most modern locks are unfair, while desired lock is completely fair.
+
 ---
 {: data-content="footnotes"}
 
@@ -269,3 +309,5 @@ I'm not sure if this is an expected behavior. Or, the `fastpath`, by design, is 
 [^2]: [Hardware Support Locking](https://xiayingp.gitbook.io/build_a_os/lock/untitled-3)
 
 [^3]: [futex — Linux manual page](https://man7.org/linux/man-pages/man2/futex.2.html)
+
+[^5]: [Avoiding Scheduler Subversion usingScheduler–Cooperative Locks](https://research.cs.wisc.edu/wind/Publications/eurosys20-scl.pdf)
