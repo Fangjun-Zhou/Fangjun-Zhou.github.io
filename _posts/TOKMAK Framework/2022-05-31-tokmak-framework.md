@@ -63,7 +63,8 @@ Add following registry to UPM `manifest.json` config file:
         "com.fintokmak",
         "com.hextantstudios",
         "com.dbrizov",
-        "net.wraithavengames"
+        "net.wraithavengames",
+        "com.github.siccity"
     ]
 }
 ```
