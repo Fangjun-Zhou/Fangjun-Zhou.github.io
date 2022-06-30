@@ -207,4 +207,4 @@ Now you can see why this process is called backpropagation:
 
 ![picture 3](/Blog/images/2022-06-30-18-33-13-backpropagation-explain.jpeg)
 
-The whole process of finding the weight of a certain hidden unit starts from the final activation value output, use the value of hidden units as $x$ in the $g'(x) = x \cdot (1-x)$ and ends up with the input vector for the target hidden unit.
+The whole process of finding the weight of a certain hidden unit starts from the final activation value output, use the value of hidden units as $g(x)$ in the $g'(x) = g(x) \cdot (1-g(x))$ and ends up with the input vector for the target hidden unit.
