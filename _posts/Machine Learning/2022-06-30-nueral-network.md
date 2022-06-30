@@ -187,7 +187,11 @@ We now have the gradient of $C$ with respect to $w_1^{(1)}$:
 
 $$
 \begin{aligned}
-    \frac{\partial C}{\partial w_1^{(1)}} &= (a^{(2)} - y_i) \cdot g(w^{(2)} a^{(1)} + b^{(2)}) \cdot (1- g(w^{(2)} a^{(1)} + b^{(2)})) \cdot w_1^{(2)} \cdot g(w_{1}^{(1)} x + b_{1}^{(1)}) \cdot (1- g(w_{1}^{(1)} x + b_{1}^{(1)})) \cdot x
+    \frac{\partial C}{\partial w_1^{(1)}} &= (a^{(2)} - y_i) \\
+    & \cdot g(w^{(2)} a^{(1)} + b^{(2)}) \cdot (1- g(w^{(2)} a^{(1)} + b^{(2)})) \\
+    & \cdot w_1^{(2)} \\
+    & \cdot g(w_{1}^{(1)} x + b_{1}^{(1)}) \cdot (1- g(w_{1}^{(1)} x + b_{1}^{(1)})) \\
+    & \cdot x
 \end{aligned}
 $$
 
