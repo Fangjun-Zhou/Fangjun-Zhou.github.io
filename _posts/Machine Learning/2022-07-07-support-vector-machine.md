@@ -173,9 +173,58 @@ So here comes the subgradient descent process of soft SVM:
 
 $$
 \begin{aligned}
-    \frac{\partial C}{\partial w} & \ni \lambda w - \sum_{i=1}^{n}{(2y_i-1)x_i \mathbb{1}_{\{ (2y_i-1)(w^{T}x + b) \ge 1 \}}} \\
-    \frac{\partial C}{\partial b} & \ni - \sum_{i=1}^{n}{(2y_i-1) \mathbb{1}_{\{ (2y_i-1)(w^{T}x + b) \ge 1 \}}}
+    \frac{\partial C}{\partial w} & \ni \lambda w - \sum_{i=1}^{n}{(2y_i-1)x_i \mathbb{1}_{\{ (2y_i-1)(w^{T}x + b) < 1 \}}} \\
+    \frac{\partial C}{\partial b} & \ni - \sum_{i=1}^{n}{(2y_i-1) \mathbb{1}_{\{ (2y_i-1)(w^{T}x + b) < 1 \}}}
 \end{aligned}
 $$
 
-Here, the $\mathbb{1}_{\{ (2y_i-1)(w^{T}x + b) \ge 1 \}}$ simply means that when $(2y_i-1)(w^{T}x + b) \ge 1$,
+Here, the $\mathbb{1}_{\{ (2y_i-1)(w^{T}x + b) < 1 \}}$ means that when $(2y_i-1)(w^{T}x + b) \ge 1$, term $(2y_i-1)x_i$ is removed from the sum.
+
+On the other hand, when $(2y_i-1)(w^{T}x + b) < 1$, $1 - (2y_i-1)(w^{T}x_i + b) > 0$, and thus $\xi_i > 0$, which means that the error exist. In this scenario, the gradient need to descent.
+
+## Real Life Subgradient Descent Algorithm
+
+In practice, bias term is not included in gradient descent, and the labels are -1 and 1 instead of 0 and 1.
+
+To achieve this, new label $z_i = 2y_i - 1$ can be used, where $y_i$ is the original label 0 or 1.
+
+And the subgradient descent algorithm can be described as:
+
+$$
+\begin{aligned}
+    w &= (1 - \lambda) w - \alpha \sum_{i=1}^{n}z_i \mathbb{1}_{\{ z_i w^{T} x_i \ge 1 \}} x_i \\
+    z_i &= 2y_i - 1, i = 1, 2, \cdots, n
+\end{aligned}
+$$
+
+Here, $\lambda$ is used as regularization parameter to avoid overfitting.
+
+And to predict a data in the testing set, simply use $\hat{y} = \mathbb{1}_{\{ w^T x_i \ge 0 \}}$. Here, the bias $b$ is dropped, and $\ge 0$ instead of $\ge 0.5$ is used to classify between -1 and 1.
+
+# Kernel Trick
+
+With feature map $\varphi$, the training set $\{ (x_i, y_i) | i = 1, 2, \cdots , n \}$ can be transfer to $\{ (\varphi (x_i), y_i) | i = 1, 2, \cdots , n \}$.
+
+## Kernel Matrix
+
+The i-th row and i'-th column of the kernel matrix is represented by:
+
+$$
+K_{ii'} = \varphi(x_i)^T \varphi(x_{i'})
+$$
+
+Example:
+
+Define feature map $\varphi (x) = (x_1^2, \sqrt{2} x_1x_2, x_2^2)$, the mapped feature of instance $i$ will be $\varphi (x_i) = (x_{i1}^2, \sqrt{2} x_{i1}x_{i2}, x_{i2}^2)$
+
+So the $K_{ii'}$ should be:
+
+$$
+\begin{aligned}
+    K_{ii'} &= \varphi(x_i)^T \varphi(x_{i'}) \\
+    &= (x_{i1}^2, \sqrt{2} x_{i1}x_{i2}, x_{i2}^2)^T \cdot (x_{i'1}^2, \sqrt{2} x_{i'1}x_{i'2}, x_{i'2}^2) \\
+    &= x_{i1}^2x_{i'1}^2 + 2x_{i1}x_{i2}x_{i'1}x_{i'2} + x_{i2}^2x_{i'2}^2 \\
+    &= (x_{i1}x_{i'1} + x_{i2}x_{i'2})^2 \\
+    &= (x_i^Tx_{i'})^2
+\end{aligned}
+$$
