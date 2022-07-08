@@ -203,7 +203,7 @@ And to predict a data in the testing set, simply use $\hat{y} = \mathbb{1}_{\{ w
 
 # Kernel Trick
 
-With feature map $\varphi$, the training set $\{ (x_i, y_i) | i = 1, 2, \cdots , n \}$ can be transfer to $\{ (\varphi (x_i), y_i) | i = 1, 2, \cdots , n \}$.
+With feature map $\varphi$, the training set $\{ (x_i, y_i) \vert i = 1, 2, \cdots , n \}$ can be transfer to $\{ (\varphi (x_i), y_i) \vert i = 1, 2, \cdots , n \}$.
 
 ## Kernel Matrix
 
