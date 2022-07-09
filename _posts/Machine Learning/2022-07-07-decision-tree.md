@@ -128,3 +128,112 @@ Here, $K_{X_j}$ is the set of all the possible values for feature $X_j$. For exa
 With discrete features, we can split a feature into multiple classes, but with continuous features it can be difficult.
 
 One way to do that is always perform binary split on the chosen feature. And the threshold is found by trying to split on all the available instance. When finding the one with largest information gain, perform the split.
+
+According to the expression of information gain:
+
+$$
+I(Y \vert X) = H(Y) - H(Y \vert X)
+$$
+
+Here, Y is the label and X is the most informative feature with largest information gain.
+
+### Example
+
+For example, when feature $x_j$ is found the most informative feature currently, list feature $x_j$ and label $y$ for all the training data:
+
+| instance | $x_j$ | $y$ |
+| -------- | ----- | --- |
+| 1        | 1     | 0   |
+| 2        | 2     | 0   |
+| 3        | 3     | 1   |
+| 4        | 2     | 1   |
+| 5        | 4     | 0   |
+
+And in an example, we can find the information gain of splitting with condition $x_j < 2$, we can list that condition based on $\mathbb{1}_{\{ x_j < 2 \}}$
+
+| instance | $x_j$ | $\mathbb{1}_{\{ x_j < 2 \}}$ | $y$ |
+| -------- | ----- | ---------------------------- | --- |
+| 1        | 1     | 1                            | 0   |
+| 2        | 2     | 0                            | 0   |
+| 3        | 3     | 0                            | 1   |
+| 4        | 2     | 0                            | 1   |
+| 5        | 4     | 0                            | 0   |
+
+Thus:
+
+$$
+\begin{aligned}
+    H(Y) = \sum_{y}^{\{0, 1\}}p_{\{Y = y\}} log_2(\frac{1}{p_y}) \\
+\end{aligned}
+$$
+
+Where:
+
+$$
+\begin{aligned}
+    p_{\{Y = 0\}} &= \frac{3}{5} \\
+    p_{\{Y = 1\}} &= \frac{2}{5} \\
+\end{aligned}
+$$
+
+So:
+
+$$
+\begin{aligned}
+    H(Y) &= \sum_{y}^{\{0, 1\}}p_{\{Y = y\}} log_2(\frac{1}{p_y}) \\
+    &= -\frac{3}{5}log_2(\frac{3}{5}) - \frac{2}{5}log_2(\frac{2}{5})
+\end{aligned}
+$$
+
+And:
+
+$$
+\begin{aligned}
+    H(Y \vert X_j) &= \sum_{x}^{\{ 0, 1 \}}p_{\{ X_j = x \}} H(Y \vert X_j=x) \\
+\end{aligned}
+$$
+
+Where:
+
+$$
+\begin{aligned}
+    H(Y \vert X_j = x) &= - \sum_{y}^{\{0, 1\}}{p_{\{Y=y\} \vert \{X_j=x\}} log_2(p_{\{Y=y\} \vert \{X_j=x\}})}
+\end{aligned}
+$$
+
+Here, $X_j$ is just an alias for $\mathbb{1}_{\{ x_j < 2 \}}$. So the probability of $p_{\{ X_j = x \}}$ is actually $p_{\{ \mathbb{1}_{\{ x_j < 2 \}} = x \}}$
+
+$$
+\begin{aligned}
+    p_{\{X_j=0\}} &= \frac{4}{5} \\
+    p_{\{X_j=1\}} &= \frac{1}{5} \\
+    p_{\{Y=0\} \vert \{X_j=0\}} &= \frac{1}{2} \\
+    p_{\{Y=1\} \vert \{X_j=0\}} &= \frac{1}{2} \\
+    p_{\{Y=0\} \vert \{X_j=1\}} &= 1 \\
+    p_{\{Y=1\} \vert \{X_j=1\}} &= 0 \\
+\end{aligned}
+$$
+
+So,
+
+$$
+\begin{aligned}
+    H(Y \vert X_j = 0) &= - \sum_{y}^{\{0, 1\}}{p_{\{Y=y\} \vert \{X_j=0\}} log_2(p_{\{Y=y\} \vert \{X_j=0\}})} \\
+    &= - \frac{1}{2}log_2(\frac{1}{2}) - \frac{1}{2}log_2(\frac{1}{2}) \\
+    &= -1 \\
+    H(Y \vert X_j = 1) &= - \sum_{y}^{\{0, 1\}}{p_{\{Y=y\} \vert \{X_j=1\}} log_2(p_{\{Y=y\} \vert \{X_j=1\}})} \\
+    &= - 1log_2(1) - 0log_2(0) \\
+    &= 0
+\end{aligned}
+$$
+
+$$
+\begin{aligned}
+    H(Y \vert X_j) &= \sum_{x}^{\{ 0, 1 \}}p_{\{ X_j = x \}} H(Y \vert X_j=x) \\
+    &= - \frac{4}{5}
+\end{aligned}
+$$
+
+## Choice of Threshold
+
+To make the algorithm simpler, the process above of finding threshold $x_j < x_{threshold}$ can be run for all $x_{threshold}$ in the training set instances. But a more efficient way is sort the training set based on feature $x_j$ and traversing all the discontinuous label value as possible threshold.
