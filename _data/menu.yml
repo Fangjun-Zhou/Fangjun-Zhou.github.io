@@ -20,6 +20,14 @@ entries:
       show_more_text: See archive...
       show_more_url: unity-dots.html
 
+  - title: machine learning
+    post_list:
+      limit: 3
+      category: machine-learning
+      show_more: true
+      show_more_text: See archive...
+      show_more_url: machine-learning.html
+
   - title: quaternions
     post_list:
       limit: 3
