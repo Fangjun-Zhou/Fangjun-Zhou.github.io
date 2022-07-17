@@ -201,7 +201,7 @@ $$
 \end{aligned}
 $$
 
-Here, $X_j$ is just an alias for $\mathbb{1}_{\{ x_j < 2 \}}$. So the probability of $p_{\{ X_j = x \}}$ is actually $p_{\{ \mathbb{1}_{\{ x_j < 2 \}} = x \}}$
+Here, $X_ j$ is just an alias for $\mathbb{1}_ {\{ x_ j < 2 \}}$. So the probability of $p_ {\{ X_ j = x \}}$ is actually $p_ {\{ \mathbb{1}_ {\{ x_ j < 2 \}} = x \}}$
 
 $$
 \begin{aligned}
