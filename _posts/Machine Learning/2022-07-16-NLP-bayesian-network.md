@@ -65,18 +65,18 @@ In a MLE example, a string contains only character 0 or 1, and there are $c_ 0$ 
 Thus, the possibility of the entire sentence to occur is:
 
 $$
-{{c_ 0 + c_ 1} \choose {c_ 0}} p^{c_ 0} (1-p)^{c_ 1}
+\binom{c_ 0 + c_ 1}{c_0} p^{c_ 0} (1-p)^{c_ 1}
 $$
 
-To explain this expression, at one location, the possibility of 0 occur is $p$ while the possibility of 1 occur is $(1-p)$. So the possibility of a sentence with $c_ 0$ 0s and $c_ 1$ 1s to occur ignoring the combination should be $p^{c_ 0} (1-p)^{c_ 1}$. On top of that, there are ${{c_ 0 + c_ 1} \choose {c_ 0}}$ combinations for such a sentence to occur so the possibility is the one given above.
+To explain this expression, at one location, the possibility of 0 occur is $p$ while the possibility of 1 occur is $(1-p)$. So the possibility of a sentence with $c_ 0$ 0s and $c_ 1$ 1s to occur ignoring the combination should be $p^{c_ 0} (1-p)^{c_ 1}$. On top of that, there are $\binom{c_ 0 + c_ 1}{c_0}$ combinations for such a sentence to occur so the possibility is the one given above.
 
 Given:
 
 $$
-{{c_ 0 + c_ 1} \choose {c_ 0}} = \frac{(c_ 0 + c_ 1)!}{c_ 0!c_ 1!}
+\binom{c_ 0 + c_ 1}{c_0} = \frac{(c_ 0 + c_ 1)!}{c_ 0!c_ 1!}
 $$
 
-To maximize ${{c_ 0 + c_ 1} \choose {c_ 0}} p^{c_ 0} (1-p)^{c_ 1}$, $p = \frac{c_ 0}{c_ 0 + c_ 1}$.
+To maximize $\binom{c_ 0 + c_ 1}{c_0} p^{c_ 0} (1-p)^{c_ 1}$, $p = \frac{c_ 0}{c_ 0 + c_ 1}$.
 
 ### Bigram Model
 
