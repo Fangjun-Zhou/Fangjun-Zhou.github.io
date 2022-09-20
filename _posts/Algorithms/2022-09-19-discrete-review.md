@@ -2,8 +2,6 @@
 layout: post
 title: Discrete Review
 category: algorithms
-header-includes:
-  - \usepackage[ruled]{algorithm2e}
 ---
 
 # Answer Sheet
