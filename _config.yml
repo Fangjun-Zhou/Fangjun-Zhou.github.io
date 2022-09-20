@@ -21,7 +21,7 @@
 title: Fangjun's Dev Blog
 email: fangjun.zhou02@gmail.com
 description: >- # this means to ignore newlines until "baseurl:"
-  Post some stuff related to game development, computer graphics, and so on.
+  Sharing latest and greatest tech about game development, computer graphics, machine learning, algorithms, operating system, and other stuff that I'm interested in here!
 baseurl: "/Blog" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
 github_username: Fangjun Zhou
