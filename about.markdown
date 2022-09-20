@@ -12,7 +12,7 @@ I'll post some stuff related to game development, computer graphics, machine lea
 
 ### LinkedIn
 
-[Fangjun Zhou](www.linkedin.com/in/fangjun-zhou)
+[Fangjun Zhou](https://www.linkedin.com/in/fangjun-zhou)
 
 ### Github
 
