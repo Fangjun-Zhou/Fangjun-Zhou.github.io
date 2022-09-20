@@ -40,7 +40,7 @@ reflexive, symmetric, antisymmetric, transitive
 ## 16a
 
 <pre id="hello-world-code" style="display:hidden;">
-\begin{algorithm}[H]
+\begin{algorithm}
     \DontPrintSemicolon
     \KwIn{$a$: A non-empty array of integers (indexed starting at 1)}
     \KwOut{The smallest element in the array}
