@@ -16,10 +16,6 @@ header-includes:
 />
 <script src="https://cdn.jsdelivr.net/npm/pseudocode@latest/build/pseudocode.min.js"></script>
 
-<script>
-    pseudocode.renderElement(document.getElementById("hello-world-code"));
-</script>
-
 # Answer Sheet
 
 [Answer Sheet](/Blog/documents/Assignment1_solution.pdf)
@@ -66,3 +62,7 @@ $$
     \caption{findMin}
 \end{algorithm}
 $$
+
+<script>
+    pseudocode.renderElement(document.getElementById("hello-world-code"));
+</script>
