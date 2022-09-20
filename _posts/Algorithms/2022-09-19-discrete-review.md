@@ -29,6 +29,12 @@ reflexive, symmetric, antisymmetric, transitive
 
 ## 16a
 
+<pre id="hello-world-code" style="display:hidden;">
+    \begin{algorithmic}
+    \PRINT \texttt{'hello world'}
+    \end{algorithmic}
+</pre>
+
 $$
 \begin{algorithm}[H]
     \DontPrintSemicolon
