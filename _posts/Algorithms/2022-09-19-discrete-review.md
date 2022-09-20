@@ -6,6 +6,20 @@ header-includes:
   - \usepackage[ruled]{algorithm2e}
 ---
 
+<script
+    src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"
+    type="text/javascript"
+></script>
+<link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/pseudocode@latest/build/pseudocode.min.css"
+/>
+<script src="https://cdn.jsdelivr.net/npm/pseudocode@latest/build/pseudocode.min.js"></script>
+
+<script>
+    pseudocode.renderElement(document.getElementById("hello-world-code"));
+</script>
+
 # Answer Sheet
 
 [Answer Sheet](/Blog/documents/Assignment1_solution.pdf)
