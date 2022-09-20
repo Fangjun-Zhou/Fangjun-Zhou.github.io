@@ -40,12 +40,6 @@ reflexive, symmetric, antisymmetric, transitive
 ## 16a
 
 <pre id="hello-world-code" style="display:hidden;">
-    \begin{algorithmic}
-    \PRINT \texttt{'hello world'}
-    \end{algorithmic}
-</pre>
-
-$$
 \begin{algorithm}[H]
     \DontPrintSemicolon
     \KwIn{$a$: A non-empty array of integers (indexed starting at 1)}
@@ -61,7 +55,7 @@ $$
     }
     \caption{findMin}
 \end{algorithm}
-$$
+</pre>
 
 <script>
     pseudocode.renderElement(document.getElementById("hello-world-code"));
