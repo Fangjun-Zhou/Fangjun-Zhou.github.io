@@ -12,14 +12,6 @@ entries:
       show_more_text: See archive...
       show_more_url: archive.html
 
-  - title: unity dots
-    post_list:
-      limit: 3
-      category: unity-dots
-      show_more: true
-      show_more_text: See archive...
-      show_more_url: unity-dots.html
-
   - title: machine learning
     post_list:
       limit: 3
@@ -28,13 +20,21 @@ entries:
       show_more_text: See archive...
       show_more_url: machine-learning.html
 
-  - title: quaternions
+  - title: algorithms
     post_list:
       limit: 3
-      category: quaternions
+      category: algorithms
       show_more: true
       show_more_text: See archive...
-      show_more_url: quaternions.html
+      show_more_url: algorithms.html
+
+  - title: computer-graphics
+    post_list:
+      limit: 3
+      category: computer-graphics
+      show_more: true
+      show_more_text: See archive...
+      show_more_url: computer-graphics.html
 
   - title: operating system
     post_list:
@@ -43,3 +43,19 @@ entries:
       show_more: true
       show_more_text: See archive...
       show_more_url: operating-system.html
+
+  - title: unity dots
+    post_list:
+      limit: 3
+      category: unity-dots
+      show_more: true
+      show_more_text: See archive...
+      show_more_url: unity-dots.html
+
+  - title: quaternions
+    post_list:
+      limit: 3
+      category: quaternions
+      show_more: true
+      show_more_text: See archive...
+      show_more_url: quaternions.html
