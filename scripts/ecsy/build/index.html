@@ -5,6 +5,23 @@
 
     <script src="https://requirejs.org/docs/release/2.3.6/comments/require.js"></script>
     <script src="out.js" id="module"></script>
+
+    <style>
+      .debugTextArea {
+        width: 100%;
+        height: 150px;
+        resize: none;
+      }
+      .debugButton {
+        width: 100%;
+        align-self: center;
+      }
+    </style>
   </head>
-  <body></body>
+  <body>
+    <textarea class="debugTextArea" id="debug1"></textarea>
+    <button class="debugButton" id="debugButton1">
+      Change Component Value
+    </button>
+  </body>
 </html>
