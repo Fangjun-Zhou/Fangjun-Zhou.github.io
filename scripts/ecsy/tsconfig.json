@@ -1,0 +1,14 @@
+{
+  "version": "3.0.3",
+  "compilerOptions": {
+    "allowJs": true,
+    "module": "amd",
+    "removeComments": false,
+    "sourceMap": true,
+    "moduleResolution": "node",
+    "outDir": "./build",
+    "target": "es6"
+  },
+  "include": ["./**/*.ts"],
+  "exclude": ["./out.d.ts", "./node_modules"]
+}
