@@ -1,6 +1,6 @@
 ---
 layout: post
-title: ECSY 1
+title: ECSY 1 ECS Basics
 category: computer-graphics
 ---
 
