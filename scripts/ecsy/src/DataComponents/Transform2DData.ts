@@ -1,7 +1,7 @@
 import { Component } from "ecsy";
 import { Vector2, Vector2Type } from "../Utils/Vector2";
 
-export class Transform2D extends Component<Transform2D> {
+export class Transform2DData extends Component<Transform2DData> {
   position: Vector2;
 
   static schema = {
