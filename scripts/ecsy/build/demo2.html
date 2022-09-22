@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>ECSY Demo</title>
+
+    <script src="https://requirejs.org/docs/release/2.3.6/comments/require.js"></script>
+    <script src="out.js" id="module"></script>
+
+    <style>
+      .title {
+        font-weight: bold;
+        text-align: center;
+      }
+
+      .container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+      }
+      .debugCanvasArea {
+        width: 500px;
+        height: 500px;
+        resize: none;
+      }
+      .debugButton {
+        align-self: center;
+      }
+    </style>
+  </head>
+  <body>
+    <h1 class="title">ECS Demo</h1>
+    <div class="container">
+      <canvas id="mainCanvas" class="debugCanvasArea"></canvas>
+      <div style="height: 20px"></div>
+      <button id="debugButton" class="debugButton">Debug</button>
+    </div>
+  </body>
+</html>
