@@ -385,3 +385,91 @@ GeometrySystem.queries = {
   normal: { components: [Geometry, StateComponentGeometry] },
 };
 ```
+
+# Entities
+
+## Create Entities
+
+Create entities by calling `world.createEntity()`
+
+## Add Components
+
+Add components to the entity by calling `entity.addComponent()`
+
+## Access Components
+
+When accessing a readonly component, call `entity.getComponent(Component)`.
+
+When accessing a component and change its value, call `entity.getMutableComponent(Component)`
+
+## Remove Components
+
+To remove a component from the entity, call `entity.removeComponent(ComponentA)`.
+
+The ECSY use "deferred remove" for removing components. This mechanism works similar to CommandBuffer in Unity DOTS.
+
+After removing a component, other systems can still get the removed component by calling `getRemovedComponent(Component)`. However, the entity will not be queried by normal query result.
+
+To ignore the command buffer and remove a component immediately, call `entity.removeComponent(ComponentA, true)`, which set the `forceImmediate` flag to true.
+
+# Systems
+
+A system contains two callback functions: `init()`, and `execute()`.
+
+`init()` is called when the system is registered in the world.
+
+`execute()` is called every time when the `world.execute()` is called.
+
+All the query used by the system should be stored in `static.queries`.
+
+A typical system looks like this:
+
+```ts
+class SystemName extends System {
+  static queries = {
+    boxes: { components: [Box] },
+    spheres: { components: [Sphere] },
+  };
+
+  init() {
+    // Init system.
+  }
+
+  execute(delta, time) {
+    this.queries.boxes.results.forEach((entity) => {
+      let box = entity.getComponent(Box);
+      // Do whatever you want with box
+    });
+
+    this.queries.spheres.results.forEach((entity) => {
+      let sphere = entity.getComponent(Sphere);
+      // Do whatever you want with Sphere
+    });
+  }
+}
+```
+
+**IMPORTANT: If the query result will be mutated, traverse the query in reverse order.**
+
+This includes, adding (removing) a new component so that the query structure will be changed. Or deleting an entity in the query.
+
+## Register (Unregister) Systems
+
+Call `world.registerSystem(SystemClass)` to register a new system. Call `world.unregisterSystem(SystemClass)` to unregister the system.
+
+## Execution Order
+
+The execution order among systems is based on their registration order.
+
+However, changing the priority manually can override the execution order. By default, all the systems are initialized with priority 0.
+
+```ts
+world
+  .registerSystem(SystemA)
+  .registerSystem(SystemB, { priority: 2 })
+  .registerSystem(SystemC, { priority: -1 })
+  .registerSystem(SystemD)
+  .registerSystem(SystemE);
+```
+
+This will result in the following execution order: `SystemC > SystemA > SystemD > SystemE > SystemB`
