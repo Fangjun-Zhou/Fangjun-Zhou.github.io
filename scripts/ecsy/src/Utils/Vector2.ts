@@ -12,11 +12,13 @@ export class Vector2 {
   set(x: number, y: number) {
     this.x = x;
     this.y = y;
+    return this;
   }
 
   copy(v: Vector2) {
     this.x = v.x;
     this.y = v.y;
+    return this;
   }
 
   clone() {
