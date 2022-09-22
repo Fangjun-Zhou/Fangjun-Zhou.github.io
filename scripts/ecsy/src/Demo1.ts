@@ -1,7 +1,7 @@
 import { World } from "ecsy";
 import { LineData } from "./DataComponents/Demo1/LineData";
 import { ValueData } from "./DataComponents/Demo1/ValueData";
-import { Transform2DData } from "./DataComponents/Demo 2/Transform2DData";
+import { Transform2DData } from "./DataComponents/Demo2/Transform2DData";
 
 import { Vector2 } from "./Utils/Vector2";
 

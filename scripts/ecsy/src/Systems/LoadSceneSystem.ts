@@ -1,7 +1,10 @@
 import { Attributes, System } from "ecsy";
-import { Transform2DData } from "../DataComponents/Demo 2/Transform2DData";
+import { Transform2DData } from "../DataComponents/Demo2/Transform2DData";
 import { Vector2 } from "../Utils/Vector2";
 
+/**
+ * System to load the scene.
+ */
 export class LoadSceneSystem extends System {
   init(attributes?: Attributes): void {
     console.log("LoadSceneSystem.init()");
