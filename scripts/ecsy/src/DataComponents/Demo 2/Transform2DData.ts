@@ -1,5 +1,5 @@
 import { Component } from "ecsy";
-import { Vector2, Vector2Type } from "../Utils/Vector2";
+import { Vector2, Vector2Type } from "../../Utils/Vector2";
 
 export class Transform2DData extends Component<Transform2DData> {
   position: Vector2;
