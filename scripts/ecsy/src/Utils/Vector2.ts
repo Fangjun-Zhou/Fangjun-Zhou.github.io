@@ -24,6 +24,24 @@ export class Vector2 {
   clone() {
     return new Vector2(this.x, this.y);
   }
+
+  magnitude() {
+    return Math.sqrt(this.x * this.x + this.y * this.y);
+  }
+
+  static add(v1: Vector2, v2: Vector2) {
+    let out = new Vector2();
+    out.x = v1.x + v2.x;
+    out.y = v1.y + v2.y;
+    return out;
+  }
+
+  static scale(v: Vector2, s: number) {
+    let out = new Vector2();
+    out.x = v.x * s;
+    out.y = v.y * s;
+    return out;
+  }
 }
 
 export const Vector2Type = createType({
