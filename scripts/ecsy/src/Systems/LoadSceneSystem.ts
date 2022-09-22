@@ -13,7 +13,7 @@ export class LoadSceneSystem extends System {
     let entityInstance = this.world.createEntity();
     // Add Transform2DData component to the entity.
     entityInstance.addComponent(Transform2DData, {
-      position: new Vector2(0, 0),
+      position: new Vector2(250, 250),
     });
   }
 
