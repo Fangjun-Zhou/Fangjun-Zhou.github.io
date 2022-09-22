@@ -1,7 +1,8 @@
 import { World } from "ecsy";
-import { LineData } from "./DataComponents/LineData";
+import { LineData } from "./DataComponents/Demo1/LineData";
+import { ValueData } from "./DataComponents/Demo1/ValueData";
 import { Transform2DData } from "./DataComponents/Transform2DData";
-import { ValueData } from "./DataComponents/ValueData";
+
 import { Vector2 } from "./Utils/Vector2";
 
 // 1. Create a world

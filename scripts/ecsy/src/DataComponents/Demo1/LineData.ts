@@ -1,5 +1,5 @@
 import { Component } from "ecsy";
-import { Vector2 } from "../Utils/Vector2";
+import { Vector2 } from "../../Utils/Vector2";
 
 export class LineData extends Component<LineData> {
   points: Array<Vector2>;
