@@ -12,6 +12,11 @@
       "label": "Webpack Dev Server Start",
       "type": "shell",
       "command": "cd scripts/ecsy; npx webpack serve"
+    },
+    {
+      "label": "Webpack Build",
+      "type": "shell",
+      "command": "cd scripts/ecsy; npx webpack --mode production --config webpack.config.js"
     }
   ]
 }
