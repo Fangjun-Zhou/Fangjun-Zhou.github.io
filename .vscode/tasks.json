@@ -11,7 +11,7 @@
     {
       "label": "Webpack Dev Server Start",
       "type": "shell",
-      "command": "cd scripts/ecsy; npx webpack --mode development --watch"
+      "command": "cd scripts/ecsy; npx webpack serve"
     }
   ]
 }

@@ -4,14 +4,14 @@ module.exports = {
   context: path.resolve(__dirname, "src"),
   devServer: {
     static: {
-      directory: path.join(__dirname, "build"),
+      directory: path.resolve(__dirname, "build"),
     },
     compress: true,
     port: 8080,
   },
   mode: "development",
   entry: "./Main.ts",
-  devtool: "inline-source-map",
+  devtool: "source-map",
   module: {
     rules: [
       {
