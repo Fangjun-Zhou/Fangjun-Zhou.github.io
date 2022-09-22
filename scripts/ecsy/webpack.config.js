@@ -1,7 +1,7 @@
 const path = require("path");
 
 module.exports = {
-  context: path.resolve(__dirname),
+  context: path.resolve(__dirname, "src"),
   devServer: {
     static: {
       directory: path.join(__dirname, "build"),
@@ -10,7 +10,7 @@ module.exports = {
     port: 8080,
   },
   mode: "development",
-  entry: "./src/Main.ts",
+  entry: "./Main.ts",
   devtool: "inline-source-map",
   module: {
     rules: [
