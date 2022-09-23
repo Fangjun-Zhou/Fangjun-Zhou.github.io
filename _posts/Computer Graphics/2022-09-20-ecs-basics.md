@@ -30,6 +30,11 @@ category: computer-graphics
     width: 100%;
     resize: none;
   }
+  .debugTextArea {
+    width: 100%;
+    height: 150px;
+    resize: none;
+  }
   .debugButtonContainer {
     display: flex;
     flex-direction: row;
