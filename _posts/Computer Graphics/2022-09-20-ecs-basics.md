@@ -153,9 +153,12 @@ valueData.strVal = "Hello World!";
 ```
 
 <textarea readonly class="debugTextArea" id="debug1"></textarea>
-<button class="debugButton" id="debugButton1">
-Change Component Value
-</button>
+
+<div class="debugButtonContainer">
+  <button class="debugButton" id="debugButton1">
+  Change Component Value
+  </button>
+</div>
 
 ## Custom Types
 
@@ -233,9 +236,12 @@ transform2D.position.y += 10;
 ```
 
 <textarea readonly class="debugTextArea" id="debug2"></textarea>
-<button class="debugButton" id="debugButton2">
-Change Component Value
-</button>
+
+<div class="debugButtonContainer">
+  <button class="debugButton" id="debugButton2">
+  Change Component Value
+  </button>
+</div>
 
 ## Special Components
 
@@ -344,10 +350,13 @@ lineData2.copy(lineData);
 ```
 
 <textarea readonly class="debugTextArea" id="debug3"></textarea>
-<button class="debugButton" id="debugButton3">
-Change Original Line Data
-</button>
-<button class="debugButton" id="debugButton4">Copy Line Data</button>
+
+<div class="debugButtonContainer">
+  <button class="debugButton" id="debugButton3">
+  Change Original Line Data
+  </button>
+  <button class="debugButton" id="debugButton4">Copy Line Data</button>
+</div>
 
 ## Disable and Custom Object Pooling
 
