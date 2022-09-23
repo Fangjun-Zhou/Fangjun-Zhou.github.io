@@ -1,6 +1,6 @@
 ---
 layout: post
-title: ECSY 1 ECS Basics
+title: ECS Basics
 category: computer-graphics
 ---
 
@@ -11,6 +11,10 @@ category: computer-graphics
     width: 100%;
     height: 150px;
     resize: none;
+  }
+  .debugCanvasArea {
+    width: 100%;
+    align-self: center;
   }
   .debugButton {
     width: 100%;
@@ -29,6 +33,8 @@ Install ECSY
 ```bash
 npm install --save ecsy
 ```
+
+<canvas id="mainCanvas" class="debugCanvasArea" width="500" height="500"> </canvas>
 
 # World
 
