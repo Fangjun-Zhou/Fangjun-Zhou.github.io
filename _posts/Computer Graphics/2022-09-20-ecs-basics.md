@@ -7,20 +7,63 @@ category: computer-graphics
 <script src="https://requirejs.org/docs/release/2.3.6/comments/require.js"></script>
 <script src="/Blog/scripts/ecsy/build/out.js" id="module"></script>
 <style>
-  .debugTextArea {
-    width: 100%;
-    height: 150px;
-    resize: none;
+  .title {
+    font-weight: bold;
+    text-align: center;
+  }
+  .centeredText {
+    text-align: center;
+  }
+  .verticalContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .horizontalContainer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
   }
   .debugCanvasArea {
-    width: 100%;
-    align-self: center;
+    width: 400px;
+    height: 400px;
+    resize: none;
+  }
+  .debugButtonContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
   }
   .debugButton {
-    width: 100%;
     align-self: center;
+    margin: 10px;
   }
 </style>
+
+# Demo
+
+## ECS Gravity Simulation
+
+<div class="horizontalContainer">
+  <p class="title" style="margin-right: 10px;">Moon Count:</p>
+  <p id="moonCount">0</p>
+</div>
+
+<canvas id="mainCanvas" class="debugCanvasArea" width="500" height="500"> </canvas>
+
+<div class="debugButtonContainer">
+  <button class="debugButton" id="generateMoonButton">
+    Generate 50 Moons
+  </button>
+  <button class="debugButton" id="generatePlanetButton">
+    Generate 1 Planets
+  </button>
+  <button class="debugButton" id="clearEntitiesButton">
+    Clear All Entities
+  </button>
+</div>
 
 # ECSY References
 
@@ -33,8 +76,6 @@ Install ECSY
 ```bash
 npm install --save ecsy
 ```
-
-<canvas id="mainCanvas" class="debugCanvasArea" width="500" height="500"> </canvas>
 
 # World
 
