@@ -8,6 +8,7 @@ import { DraggableHighlightRenderSystem } from "./Systems/DraggableHighlightRend
 import { DraggableSystem } from "./Systems/DraggableSystem";
 import { GravitySystem } from "./Systems/GravitySystem";
 import { MoonRenderSystem } from "./Systems/MoonRenderSystem";
+import { PlanetGenerationSystem } from "./Systems/PlanetGenerationSystem";
 import { PlanetRenderSystem } from "./Systems/PlanetRenderSystem";
 import { VelocityMoveSystem } from "./Systems/VelocityMoveSystem";
 import { DebugTag } from "./TagComponents/Demo2/DebugTag";
@@ -39,6 +40,22 @@ export const demo2 = () => {
   mainCanvas.width = mainCanvas.clientWidth;
   mainCanvas.height = mainCanvas.clientHeight;
 
+  // Get buttons.
+  const generateMoonButton = document.getElementById(
+    "generateMoonButton"
+  ) as HTMLButtonElement;
+  const generatePlanetButton = document.getElementById(
+    "generatePlanetButton"
+  ) as HTMLButtonElement;
+  const clearEntitiesButton = document.getElementById(
+    "clearEntitiesButton"
+  ) as HTMLButtonElement;
+
+  // Get entity count text.
+  const moonCountText = document.getElementById(
+    "moonCount"
+  ) as HTMLParagraphElement;
+
   // Register all tag components.
   world
     .registerComponent(DebugTag)
@@ -58,7 +75,14 @@ export const demo2 = () => {
       canvas: mainCanvas,
     })
     .registerSystem(VelocityMoveSystem)
-    .registerSystem(GravitySystem);
+    .registerSystem(GravitySystem)
+    .registerSystem(PlanetGenerationSystem, {
+      canvas: mainCanvas,
+      generateMoonButton: generateMoonButton,
+      generatePlanetButton: generatePlanetButton,
+      clearEntitiesButton: clearEntitiesButton,
+      moonCountText: moonCountText,
+    });
 
   // Register all render systems.
   world
@@ -77,42 +101,6 @@ export const demo2 = () => {
     .registerSystem(DraggableHighlightRenderSystem, {
       canvas: mainCanvas,
     });
-
-  // Randomly add 200 draggable entities.
-  for (let i = 0; i < 50; i++) {
-    world
-      .createEntity()
-      .addComponent(Transform2DData, {
-        position: new Vector2(
-          Math.random() * mainCanvas.width,
-          Math.random() * mainCanvas.height
-        ),
-      })
-      .addComponent(VelocityData, {
-        velocity: new Vector2(
-          Math.random() * 100 - 50,
-          Math.random() * 100 - 50
-        ),
-      })
-      .addComponent(MassData, {
-        mass: Math.random() * 5 + 5,
-      })
-      .addComponent(MoonTag);
-  }
-
-  // Randomly generate 3 planets.
-  for (let i = 0; i < 1; i++) {
-    world
-      .createEntity()
-      .addComponent(Transform2DData, {
-        position: new Vector2(mainCanvas.width / 2, mainCanvas.height / 2),
-      })
-      .addComponent(MassData, {
-        mass: Math.random() * 5000 + 5000,
-      })
-      .addComponent(PlanetTag)
-      .addComponent(DraggableTag);
-  }
 
   // Start main loop.
   requestAnimationFrame(mainUpdate);
