@@ -27,8 +27,7 @@ category: computer-graphics
     justify-content: center;
   }
   .debugCanvasArea {
-    width: 400px;
-    height: 400px;
+    width: 100%;
     resize: none;
   }
   .debugButtonContainer {
