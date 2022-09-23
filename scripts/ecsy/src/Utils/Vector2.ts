@@ -36,6 +36,13 @@ export class Vector2 {
     return out;
   }
 
+  static sub(v1: Vector2, v2: Vector2) {
+    let out = new Vector2();
+    out.x = v1.x - v2.x;
+    out.y = v1.y - v2.y;
+    return out;
+  }
+
   static scale(v: Vector2, s: number) {
     let out = new Vector2();
     out.x = v.x * s;
