@@ -45,6 +45,8 @@ category: computer-graphics
 
 ## ECS Gravity Simulation
 
+**NOTICE: You can actually drag and move orange planets!!**
+
 <div class="horizontalContainer">
   <p class="title" style="margin-right: 10px;">Moon Count:</p>
   <p id="moonCount">0</p>
