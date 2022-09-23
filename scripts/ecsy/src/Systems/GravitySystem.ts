@@ -9,6 +9,9 @@ import { Vector2 } from "../Utils/Vector2";
 // Gravity constant.
 const G = 6.67408 * Math.pow(10, -11);
 
+// Max acceleration.
+const MAX_ACCELERATION = 100;
+
 export class GravitySystem extends System {
   static queries: SystemQueries = {
     planets: {
@@ -54,7 +57,13 @@ export class GravitySystem extends System {
           moonTransform.position
         ).normalize();
         // Get the acceleration of the force.
-        const acceleration = Vector2.scale(direction, force / moonMass.mass);
+        let acceleration = Vector2.scale(direction, force / moonMass.mass);
+
+        // Clamp the acceleration.
+        if (acceleration.magnitude() > MAX_ACCELERATION) {
+          acceleration = acceleration.normalize();
+          acceleration = Vector2.scale(acceleration, MAX_ACCELERATION);
+        }
 
         // Apply the acceleration to the moon's velocity.
         moonVelocity.velocity = Vector2.add(
