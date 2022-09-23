@@ -29,6 +29,14 @@ export class Vector2 {
     return Math.sqrt(this.x * this.x + this.y * this.y);
   }
 
+  normalize() {
+    const magnitude = this.magnitude();
+    let out = new Vector2();
+    out.x = this.x / magnitude;
+    out.y = this.y / magnitude;
+    return out;
+  }
+
   static add(v1: Vector2, v2: Vector2) {
     let out = new Vector2();
     out.x = v1.x + v2.x;
