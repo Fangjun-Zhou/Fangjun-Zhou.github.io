@@ -35,6 +35,10 @@ export const demo2 = () => {
     return;
   }
 
+  // Resize canvas to fit its css size.
+  mainCanvas.width = mainCanvas.clientWidth;
+  mainCanvas.height = mainCanvas.clientHeight;
+
   // Register all tag components.
   world
     .registerComponent(DebugTag)
@@ -101,7 +105,7 @@ export const demo2 = () => {
     world
       .createEntity()
       .addComponent(Transform2DData, {
-        position: new Vector2(250, 250),
+        position: new Vector2(mainCanvas.width / 2, mainCanvas.height / 2),
       })
       .addComponent(MassData, {
         mass: Math.random() * 5000 + 5000,
