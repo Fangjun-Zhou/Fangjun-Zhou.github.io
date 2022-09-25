@@ -62,6 +62,12 @@ export class PlanetGenerationSystem extends System {
       this.moonCount = 0;
       moonCountText.innerText = this.moonCount.toString();
     });
+
+    this.generatePlanets(1);
+    this.generateMoons(50);
+    // Update entity count text.
+    this.moonCount += 50;
+    moonCountText.innerText = this.moonCount.toString();
   }
 
   execute(delta: number, time: number): void {
