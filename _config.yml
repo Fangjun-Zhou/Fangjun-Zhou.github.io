@@ -30,6 +30,7 @@ github_username: Fangjun Zhou
 remote_theme: riggraz/no-style-please
 plugins:
   - jekyll-feed
+  - jekyll-sitemap
 
 theme_config:
   appearance: "auto" # can be "light", "dark" or "auto"
