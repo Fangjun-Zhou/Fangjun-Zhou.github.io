@@ -89,3 +89,73 @@ class Solution:
         # Get result.
         return max(s)
 ```
+
+# Divide and Conquer
+
+There's another solution to this problem using DC.
+
+Given an array A, we can first search the value of max subarray on the left and right half of A. Then find the value of the max subarray cross the midpoint. Then return the max value of these three results.
+
+This is the pseudo code:
+
+![picture 1](/Blog/images/2022-10-26-10-45-50-max-subarray-dc.png)
+
+Here, the $MidMaxSubarray$ first search the max subarray on the left that **ends at m-1**. Then search the max subarray **start at m**. Then combine the two results.
+
+This extra step is necessary and we cannot use the result from $A_1$ and $A_2$ directly since $A_1$ and $A_2$ may not be able to connect.
+
+## Analysis
+
+The $MidMaxSubarray$ search two separate arrays linearly. So its time complexity is $O(n)$
+
+There are two recursive calls in $MaxSubarray$, each with size n/2.
+
+So we have the recurrence:
+
+$$
+T(n) \le 2T(n/2) + cn = O(nlogn)
+$$
+
+## Code Solution
+
+```python
+class Solution:
+    def maxSubArray(self, nums: List[int]) -> int:
+        return self.maxSubArrayHelper(nums, 0, len(nums))
+
+    def maxSubArrayHelper(self, nums: List[int], i: int, j: int) -> int:
+        """
+        Return the sum of max subarray from nums[i, j)
+        """
+        # Base case: If there's only one item in nums.
+        if j - i == 1:
+            return nums[i]
+
+        # Get the mid index.
+        m = int((i + j)/2)
+
+        # Get the value of max subarray from [i, m)
+        l = self.maxSubArrayHelper(nums, i, m)
+        # Get the value of max subarray from [m, j)
+        r = self.maxSubArrayHelper(nums, m, j)
+
+        # Find the max subarray cross m.
+        # Left max subarray end at m-1.
+        maxP = nums[m-1]
+        val = 0
+        for p in range(m-1, i-1, -1):
+            val += nums[p]
+            if val > maxP:
+                maxP = val
+        # Right max subarray start at m.
+        maxQ = nums[m]
+        val = 0
+        for q in range(m, j, 1):
+            val += nums[q]
+            if val > maxQ:
+                maxQ = val
+        c = maxP + maxQ
+
+        return max(l, r, c)
+
+```
