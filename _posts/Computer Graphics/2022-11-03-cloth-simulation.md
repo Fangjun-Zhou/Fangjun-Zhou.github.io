@@ -1,16 +1,24 @@
 ---
 layout: post
-title: Verlet Integration
+title: Sloth Simulation
 category: computer-graphics
 ---
 
-When doing research on the Verlet Integration method, I came up with several math topics I forgot. The article I read didn't explain everything well enough. So I decided to write this blog to explain how I understand this topic.
+A few weeks ago, I developed a [2d rope simulation project](https://fangjun-zhou.github.io/Blog/scripts/cs559-assignment-2/homework2.html) for my CG assignment.
 
-[The article I read](https://owlree.blog/posts/simulating-a-rope.html) explained the flaw of Euler Method very well. Simply put, the error of Euler Method is $O(\Delta t)$. With Verlet Integration, we can shrink the error to $O(\Delta t ^ 3)$.
+However, I had some problems with my simulation at that time. For example, all the ropes seem too bouncy and that is not my expected behavior. Besides, the ropes sometimes become glitchy when the frame rate drops.
 
-# Taylor Expansion of Position on Time
+This week, I decided to upgrade my cloth simulation project to 3D. At the same time, I want to see if I can solve those old problems.
 
-To start with, basic function describing a moving object with acceleration is provided.
+# Verlet Integration
+
+When researching the Verlet Integration method, I came up with several math topics I forgot. The article I read didn't explain everything well enough. So I decided to write this blog to explain how I understand this topic.
+
+[The article I read](https://owlree.blog/posts/simulating-a-rope.html) explained the flaw of the Euler Method very well. Simply put, the error of the Euler Method is $O(\Delta t)$. With Verlet Integration, we can shrink the error to $O(\Delta t ^ 3)$.
+
+## Taylor Expansion of Position on Time
+
+To start with, a basic function describing a moving object with acceleration is provided.
 
 Let $f(x)$ be the position of the object at time $x$
 
@@ -56,7 +64,7 @@ $$
 f(t + \Delta t) = f(t) + \Delta t f'(t) - \int_{t}^{t + \Delta t} (x + C)f''(x) dx
 $$
 
-We can keep integrate the last term by parts, and we get the Taylor Expansion of $f(t + \Delta t)$ on $t$:
+We can keep integrating the last term by parts, and we get the Taylor Expansion of $f(t + \Delta t)$ on $t$:
 
 $$
 \begin{aligned}
@@ -67,7 +75,7 @@ $$
 
 [Here](https://math.stackexchange.com/questions/1750344/almost-taylors-theorem-proof-through-integration-by-parts) is the proof of Taylor's Theorem using integrate by part. Excellent answer if you forget everything you learned in your calculus class.
 
-# Verlet Integration Method
+## Verlet Integration Method
 
 Given the Taylor expansion of position on time, we have:
 
@@ -103,4 +111,23 @@ $$
 f(t + \Delta t) \approx  2f(t) - f(t - \Delta t) + 2\Delta t^2 \frac{f''(t)}{2!}
 $$
 
-Here, $f(t)$ is current position, $f(t - \Delta t)$ is the position in last frame.
+Here, $f(t)$ is the current position, $f(t - \Delta t)$ is the position in the last frame.
+
+# Constraints Relaxation using the Jakobsen Method
+
+According to this paper[^1], we can use the Jakobsen method to ensure constraints.
+
+One iteration of the Jakobsen method can be described as:
+
+1. Calculate the distance between two points.
+2. If it's closer than the constraint requirement, push both away.
+3. If it's further than the constraint requirement, pull both together.
+4. Go back to step 1.
+
+In each frame, multiple times of the Jakobsen method can be applied for higher accuracy.
+
+---
+
+{: data-content="footnotes"}
+
+[^1]: [Advanced Character Physics](https://www.cs.cmu.edu/afs/cs/academic/class/15462-s13/www/lec_slides/Jakobsen.pdf)

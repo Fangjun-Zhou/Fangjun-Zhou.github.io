@@ -1,3 +1,10 @@
 {
-  "cSpell.enableFiletypes": ["markdown"]
+  "cSpell.enableFiletypes": ["markdown"],
+  "grammarly.selectors": [
+    {
+      "language": "markdown",
+      "scheme": "file",
+      "pattern": "_posts/Computer Graphics/2022-11-03-cloth-simulation.md"
+    }
+  ]
 }
