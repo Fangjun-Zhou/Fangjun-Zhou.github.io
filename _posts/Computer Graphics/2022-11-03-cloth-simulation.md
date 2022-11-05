@@ -1,8 +1,14 @@
 ---
 layout: post
-title: Sloth Simulation
+title: Cloth Simulation
 category: computer-graphics
 ---
+
+[Here](https://github.com/Fangjun-Zhou/cs559-cloth-simulation) is the cloth simulation project.
+
+You can play around with the simulation [here](https://fangjun-zhou.github.io/cs559-cloth-simulation/dist/)
+
+# Introduction
 
 A few weeks ago, I developed a [2d rope simulation project](https://fangjun-zhou.github.io/Blog/scripts/cs559-assignment-2/homework2.html) for my CG assignment.
 
@@ -125,6 +131,70 @@ One iteration of the Jakobsen method can be described as:
 4. Go back to step 1.
 
 In each frame, multiple times of the Jakobsen method can be applied for higher accuracy.
+
+Implementation of the Jakobsen method in the White Dwarf Engine can be found [here](https://github.com/Fangjun-Zhou/White-Dwarf/blob/68e289b1716d91c70b4374db67ce778d1643fe7a/src/Core/Physics/Systems/JakobsenConstraintSystem.ts).
+
+To support constraints with static objects, I made some changes to the behavior of a constraint when one of the targets is static.
+
+```ts
+if (!targetEntity.hasComponent(ConstraintData)) {
+  // If the target constraint have no constraint data.
+  // Move current transform.
+  const movePos = vec3.sub(
+    vec3.create(),
+    targetTransform.position.value,
+    transform.position.value
+  );
+  vec3.normalize(movePos, movePos);
+  vec3.scale(movePos, movePos, deltaDistance);
+  vec3.add(transform.position.value, transform.position.value, movePos);
+}
+```
+
+Here, I traverse all the constraints in the world. If the target constraint has no `ConstraintData` component. Only the current entity should be moved to fulfill the constraint requirement.
+
+```ts
+// Move current transform.
+const movePos = vec3.sub(
+  vec3.create(),
+  targetTransform.position.value,
+  transform.position.value
+);
+vec3.normalize(movePos, movePos);
+vec3.scale(movePos, movePos, deltaDistance / 2);
+vec3.add(transform.position.value, transform.position.value, movePos);
+// Move target transform.
+vec3.negate(movePos, movePos);
+vec3.add(
+  targetTransform.position.value,
+  targetTransform.position.value,
+  movePos
+);
+```
+
+Otherwise, if both entities have a `ConstraintData` component, both of them need to be moved.
+
+## Jakobsen Method Iteration
+
+Note that for each frame (or physics frame), the Jakobsen method can be applied more than once. One of Robert Badea's [tweets](https://twitter.com/Owlree/status/1243277777392013316) demonstrates how the Jakobsen method is done.
+
+<video controls width="100%">
+    <source src="https://video.twimg.com/tweet_video/EUEChxPWoAEunBc.mp4">
+    Download the
+    <a href="https://video.twimg.com/tweet_video/EUEChxPWoAEunBc.mp4">MP4</a>
+    video.
+</video>
+
+Another 1D example posed by Robert Badea is [here](https://video.twimg.com/tweet_video/EUDgL_OXsAATz0Z.mp4).
+
+<video controls width="100%">
+    <source src="https://video.twimg.com/tweet_video/EUDgL_OXsAATz0Z.mp4">
+    Download the
+    <a href="https://video.twimg.com/tweet_video/EUDgL_OXsAATz0Z.mp4">MP4</a>
+    video.
+</video>
+
+It is obvious that with more iteration, the result will be more accurate.
 
 ---
 
