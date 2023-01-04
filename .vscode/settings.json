@@ -1,3 +1,14 @@
 {
-  "cSpell.enableFiletypes": ["markdown"]
+  "grammarly.selectors": [
+    {
+      "language": "markdown",
+      "scheme": "file",
+      "pattern": "_posts/Computer Graphics/2022-11-03-cloth-simulation.md"
+    },
+    {
+      "language": "markdown",
+      "scheme": "file",
+      "pattern": "_posts/Astrodynamics/2022-11-24-dot-product-of-vector-with-its-derivative.md"
+    }
+  ]
 }
