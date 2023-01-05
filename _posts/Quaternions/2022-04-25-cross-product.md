@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Fucking Cross Product
+title: Cross Product
 category: quaternions
 ---
 
@@ -12,7 +12,7 @@ The basic definition of cross-product comes from matrix determinants. Write i, j
 
 $$
 \begin{aligned}
-    \textbf{a} \times \textbf{b} &= 
+    \textbf{a} \times \textbf{b} &=
     \begin{vmatrix}
         i & j & k \\
         a_x & a_y & a_z \\
@@ -41,7 +41,7 @@ From this definition, it's obvious that order matters in the cross-product.
 
 $$
 \begin{aligned}
-    \textbf{b} \times \textbf{a} &= 
+    \textbf{b} \times \textbf{a} &=
     \begin{vmatrix}
         i & j & k \\
         b_x & b_y & b_z \\
@@ -78,6 +78,6 @@ $$
 
 The **right-hand rule** cross-product use is:
 
-![picture 1](/Blog/images/2022-04-26-16-10-59-cross-product.png)  
+![picture 1](/Blog/images/2022-04-26-16-10-59-cross-product.png)
 
 As shown in the picture, use right hand to wrap from $\textbf{a}$ to $\textbf{b}$, thumb points to the direction of $\textbf{a} \times \textbf{b}$
