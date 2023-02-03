@@ -10,7 +10,7 @@ You can play around with the simulation [here](https://fangjun-zhou.github.io/cs
 
 # Introduction
 
-A few weeks ago, I developed a [2d rope simulation project](https://fangjun-zhou.github.io/Blog/scripts/cs559-assignment-2/homework2.html) for my CG assignment.
+A few weeks ago, I developed a [2d rope simulation project](https://fangjun-zhou.github.io/scripts/cs559-assignment-2/homework2.html) for my CG assignment.
 
 However, I had some problems with my simulation at that time. For example, all the ropes seem too bouncy and that is not my expected behavior. Besides, the ropes sometimes become glitchy when the frame rate drops.
 

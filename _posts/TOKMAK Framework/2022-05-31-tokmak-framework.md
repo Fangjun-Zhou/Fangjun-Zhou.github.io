@@ -34,7 +34,6 @@ Package Manager Supported GitHub URL: https://github.com/Fangjun-Zhou/TOKMAK-Uni
 
 Package Manager Supported GitHub URL: https://github.com/Fangjun-Zhou/TOKMAK-UI-Stack-Release.git
 
-
 ## com.fintokmak.timelinesystem
 
 [**Documentation**](https://fangjun-zhou.github.io/TOKMAK-Timeline-System/)
@@ -71,21 +70,21 @@ Add following registry to UPM `manifest.json` config file:
 
 Your `scopedRegistries` field will looks like this:
 
-![picture 1](/Blog/images/2022-05-31-02-19-16-scoped-registries.png)  
+![picture 1](/images/2022-05-31-02-19-16-scoped-registries.png)
 
 ### Add Packages
 
 Add new package from your package manager:
 
-![picture 2](/Blog/images/2022-05-31-02-21-36-package-manager-add-npm.png)  
+![picture 2](/images/2022-05-31-02-21-36-package-manager-add-npm.png)
 
 Find the package name in the supported packages list above and add the package.
 
-![picture 3](/Blog/images/2022-05-31-02-23-21-add-package-name.png)  
+![picture 3](/images/2022-05-31-02-23-21-add-package-name.png)
 
 When package is successfully added, you can see it in `My Registry` list:
 
-![picture 4](/Blog/images/2022-05-31-02-24-34-npm-add-successful.png)  
+![picture 4](/images/2022-05-31-02-24-34-npm-add-successful.png)
 
 For more usage instruction, read [Unity package manager instruction](https://docs.unity3d.com/Manual/Packages.html)
 

@@ -78,6 +78,6 @@ $$
 
 The **right-hand rule** cross-product use is:
 
-![picture 1](/Blog/images/2022-04-26-16-10-59-cross-product.png)
+![picture 1](/images/2022-04-26-16-10-59-cross-product.png)
 
 As shown in the picture, use right hand to wrap from $\textbf{a}$ to $\textbf{b}$, thumb points to the direction of $\textbf{a} \times \textbf{b}$

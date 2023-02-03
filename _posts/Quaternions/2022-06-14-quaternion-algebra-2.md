@@ -49,7 +49,7 @@ $$
 
 Now, it is a little bit difficult to find $\textbf{c}^2$, but we can utilize the following diagram to find the answer:
 
-![picture 1](/Blog/images/2022-06-14-17-45-24-unit-norm-quaternion-find-vector-c.png)  
+![picture 1](/images/2022-06-14-17-45-24-unit-norm-quaternion-find-vector-c.png)
 
 In the above picture, $\textbf{d} = s_a a \hat{\textbf{a}} + s_b b \hat{\textbf{b}}$, and the vertical vector is $\textbf{a} \times \textbf{b}$
 
@@ -63,7 +63,8 @@ $$
 \end{aligned}
 $$
 
-Then, 
+Then,
+
 $$
 \begin{aligned}
     \textbf{c}^2 &= \textbf{d}^2 + a^2 b^2 \sin^2 \theta \\
@@ -78,7 +79,7 @@ $$
     \vert q_c \vert &= s_c^2 + c^2 \\
     &= s_a^2 s_b^2 - 2 s_a s_b a b \cos \theta + a^2 b^2 \cos^2 \theta + s_b^2 a^2 + s_a^2 b^2 + 2 s_a s_b a b \cos \theta + a^2 b^2 \sin^2 \theta \\
     &= s_a^2 s_b^2 + a^2 b^2 + s_b^2 a^2 + s_a^2 b^2 \\
-    &= s_a^2 (s_b^2 + b^2) + a^2 (s_b^2 + b^2) \\ 
+    &= s_a^2 (s_b^2 + b^2) + a^2 (s_b^2 + b^2) \\
     &= s_a^2 + a^2 \\
     &= 1
 \end{aligned}
@@ -165,4 +166,3 @@ $$
 # Matrix Representation of Quaternion
 
 For quaternion multiplication, matrices can be used to represent the first quaternion.
-

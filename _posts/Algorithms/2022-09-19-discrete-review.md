@@ -6,7 +6,7 @@ category: algorithms
 
 # Answer Sheet
 
-[Answer Sheet](/Blog/documents/Assignment1_solution.pdf)
+[Answer Sheet](/documents/Assignment1_solution.pdf)
 
 # Writing Assignment
 
@@ -27,7 +27,7 @@ reflexive, symmetric, antisymmetric, transitive
 
 ## 16a
 
-![picture 1](/Blog/images/2022-09-19-22-35-53-16a.png)
+![picture 1](/images/2022-09-19-22-35-53-16a.png)
 
 ### Invariant
 
@@ -46,7 +46,7 @@ For each iteration, i is incremented by 1 and getting close to the end of a. Whe
 
 ## 16b
 
-![picture 2](/Blog/images/2022-09-19-22-50-12-16b.png)
+![picture 2](/images/2022-09-19-22-50-12-16b.png)
 
 ### Invariant
 

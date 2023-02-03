@@ -191,7 +191,7 @@ $$
 
 To explain what the f\*\*k is going on here, we need to give **two examples**:
 
-![picture 1](/Blog/images/2022-07-17-00-44-23-bayesian-network-inference-example-1.png)
+![picture 1](/images/2022-07-17-00-44-23-bayesian-network-inference-example-1.png)
 
 Given the bayesian network structure as $A \rightarrow B \leftarrow C$, and the training set, first train the CPT using the data:
 

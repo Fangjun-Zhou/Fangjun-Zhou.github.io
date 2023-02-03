@@ -98,7 +98,7 @@ Given an array A, we can first search the value of max subarray on the left and 
 
 This is the pseudo code:
 
-![picture 1](/Blog/images/2022-10-26-10-45-50-max-subarray-dc.png)
+![picture 1](/images/2022-10-26-10-45-50-max-subarray-dc.png)
 
 Here, the $MidMaxSubarray$ first search the max subarray on the left that **ends at m-1**. Then search the max subarray **start at m**. Then combine the two results.
 

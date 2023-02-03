@@ -39,12 +39,12 @@ $$
     a \in \mathbb{R}
     bi \in \mathbb{I}
     z \in \mathbb{C} \\
-    &= a \cdot 
+    &= a \cdot
     \begin{bmatrix}
         1 & 0 \\
         0 & 1
     \end{bmatrix}
-    + b \cdot 
+    + b \cdot
     \begin{bmatrix}
         0 & -1 \\
         1 & 0
@@ -103,7 +103,7 @@ $$
     z^2 &= (a + bi)^2 \\
     &= (a^2 + 2abi + (bi)^2) \\
     &= a^2 - b^2 + 2abi \\
-    &= 
+    &=
     \begin{bmatrix}
         a^2 - b^2 & -2ab \\
         2ab & a^2 - b^2
@@ -146,7 +146,7 @@ $$
 
 Geometrically, this also makes sense. Note that for a complex number $z$, $\vert z \vert$ is the length of the vector representing that complex number in the complex plane.
 
-![picture 1](/Blog/images/2022-04-08-13-57-45-complex-number-1.png)  
+![picture 1](/images/2022-04-08-13-57-45-complex-number-1.png)
 
 Thus, $\vert z \vert ^2$ should be the area of a square with a width of $\vert z \vert$.
 
@@ -156,7 +156,7 @@ By defination, $\begin{vmatrix} a & b \\\\ c & d \end{vmatrix}$ is the area form
 
 Here the area is formed by $\begin{bmatrix} a \\\\ b \end{bmatrix}$ and $\begin{bmatrix} -b \\\\ a \end{bmatrix}$:
 
-![picture 2](/Blog/images/2022-04-08-14-04-52-complex-number-2.png)  
+![picture 2](/images/2022-04-08-14-04-52-complex-number-2.png)
 
 As $\begin{bmatrix} -b \\\\ a \end{bmatrix}$ is $\begin{bmatrix} a \\\\ b \end{bmatrix}$ rotated 90 degrees conter-clockwise, the final area should be what we want.
 
@@ -306,6 +306,7 @@ $$
 The product and quotient rules lead to the idea of rotors. While a complex number with a magnitude of 1 will not change the magnitude of the target vector. But the angle is presumed as the rotated angle.
 
 ---
+
 {: data-content="footnotes"}
 
 [^1]: [3B1B - e^(iπ) in 3.14 minutes, using dynamics](https://www.youtube.com/watch?v=v0YEaeIClKY&ab_channel=3Blue1Brown)

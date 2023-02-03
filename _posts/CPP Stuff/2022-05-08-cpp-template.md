@@ -37,9 +37,9 @@ Taking the fact that template parsing happens in the compile-time, the way we no
 
 Normally, classes can be compiled separately and linked afterwords.
 
-![picture 3](/Blog/images/2022-05-09-14-42-36-compile-stage.png)  
+![picture 3](/images/2022-05-09-14-42-36-compile-stage.png)
 
-![picture 4](/Blog/images/2022-05-09-14-42-52-link-stage.png)  
+![picture 4](/images/2022-05-09-14-42-52-link-stage.png)
 
 ## Static Linking Example
 
@@ -91,14 +91,13 @@ int main(int, char **){
 
 When compiling the `IntNode.hpp` and `IntNode.cpp`, a relocatable file will be generated containing all the `.rel.text` and `.rel.data` segment. Also, the symbol table will be included in the relocatable object file [^1].
 
-![picture 5](/Blog/images/2022-05-09-15-23-13-relocatable-object-file-structure.png)  
+![picture 5](/images/2022-05-09-15-23-13-relocatable-object-file-structure.png)
 
 ### Static Linking
 
 When performing the static linking, two major stages are performed[^2]:
 
 1. **Symbol resolution**: The linker will try to find all the definitions and references. The linker requires all the references have **exactly one definition**. Notice that the linker requires the definition instead of declaration, and the number of dedications cannot be 0 or greater than 1.
-   
 2. **Relocation**: After finding all the definitions, the linker can relocate the function reference by relocating the reference jump address to the function defined in other source code. During this process, the linker may also allocate memory for those function definitions.
 
 In the example, the `IntNode` constructor, destructor, `SetNext` method, and `SetValue` method in the `main.cpp` source code need to be reallocated. But in the symbol resolution stage, the linker will try to find the definition (implementation) of these functions at first. And it can successfully find them in the `IntNode.cpp` source code.
@@ -189,12 +188,10 @@ The final solution is used by my project currently[^4]: including the implementa
 This is similar to solution 2 from the perspective of the final result. But separating the implementation from the declaration can lead to a clear project structure.
 
 ---
+
 {: data-content="footnotes"}
 
 [^1]: [Linking](https://people.cs.pitt.edu/~xianeizhang/notes/Linking.html#overview)
-
 [^2]: [Geeks For Geeks - Linker](https://www.geeksforgeeks.org/linker/)
-
 [^3]: [How can I avoid linker errors with my template functions?](https://isocpp.org/wiki/faq/templates#separate-template-fn-defn-from-decl)
-
 [^4]: [DongShell DisplayBuffer Implementation](https://github.com/Fangjun-Zhou/Dong-Shell/commit/52f57e0cbad38bd0eb2bd3f586c123428397348c)

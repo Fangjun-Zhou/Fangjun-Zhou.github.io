@@ -25,7 +25,7 @@ On Entities manual page, Unity mentioned[^1] that
 
 This may mean that archetypes contain all the entities with a certain combination of components. It also means that every time you add a new component, EntityManager may try to figure out if you create a new component combination or if the entity you created can fall into some existed archetype.
 
-One point I want to mention is that I used to think that one entity can belong to different archetypes. 
+One point I want to mention is that I used to think that one entity can belong to different archetypes.
 
 For example, if an entity `E1` has components `A`, `B`, and `C`, it may fall into the archetype `[A]`, `[B]`, `[C]`, `[A, B]`, `[A, C]`, `[B, C]`, `[A, B, C]`.
 
@@ -39,11 +39,12 @@ Then how can ECS perform the search as I mentioned so fast? The answer is simple
 
 This graph[^2] from ECS Manual shows the process I mentioned pretty clear:
 
-![picture 1](/Blog/images/2022-04-08-01-00-33-archetype-foreach.png)  
+![picture 1](/images/2022-04-08-01-00-33-archetype-foreach.png)
 
-It's worth mentioning that entities can be created through archetypes. This means the created entities will have a certain combination of components. 
+It's worth mentioning that entities can be created through archetypes. This means the created entities will have a certain combination of components.
 
 ---
+
 {: data-content="Following content needs further research"}
 
 Creating entities through archetypes can be useful in scenarios like enemy spawning. Since all the enemies will have the same components (Health, Movement, Weapon, Navigation for example), spawning with archetype may be faster. Since you don't need to create an entity and add different components to it.
@@ -67,7 +68,7 @@ The DOTS ECS uses chunks to store entities in each archetype. As I mentioned, th
 
 First, we can observe the chunk structure[^3]:
 
-![picture 2](/Blog/images/2022-04-08-01-01-34-chunk-structure.png)  
+![picture 2](/images/2022-04-08-01-01-34-chunk-structure.png)
 
 It can be seen that each archetype is composed of several chunks. For archetypes, new chunks should be able to be created and added to the existed chunk list. But for chunks, the number of entities inside should be fixed.
 
@@ -87,14 +88,11 @@ Interestingly, in the documentation for `ChunkCapacity` [^5], Unity states that
 This means that although the `ChunkCapacity` is read-only, it is not a constant. Instead, the physical chunk size in memory is fixed (16KB here). Thus, `ChunkCapacity` will be smaller for larger entities. It can also be deducted that smaller entities may have better performance in loops.
 
 ---
+
 {: data-content="footnotes"}
 
 [^1]: [Unity Entities Manual](https://docs.unity3d.com/Packages/com.unity.entities@0.50/manual/ecs_entities.html)
-
 [^2]: [ECS Core Introduction](https://docs.unity3d.com/Packages/com.unity.entities@0.50/manual/ecs_core.html)
-
 [^3]: [ECS Core Introduction](https://docs.unity3d.com/Packages/com.unity.entities@0.50/manual/ecs_core.html)
-
 [^4]: [ECS Scripting API - Struct EntityArchetype](https://docs.unity3d.com/Packages/com.unity.entities@0.50/api/Unity.Entities.EntityArchetype.html)
-
 [^5]: [ECS Scripting API - Property ChunkCapacity](https://docs.unity3d.com/Packages/com.unity.entities@0.50/api/Unity.Entities.EntityArchetype.ChunkCapacity.html#Unity_Entities_EntityArchetype_ChunkCapacity)

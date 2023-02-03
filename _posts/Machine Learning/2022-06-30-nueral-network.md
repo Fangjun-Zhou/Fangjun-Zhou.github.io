@@ -18,7 +18,7 @@ To solve this problem, logistic regressions can be stack together to form a neur
 
 Each layer in the neural network takes the input from the previous layer and produces an output using logistic regression:
 
-![picture 1](/Blog/images/2022-06-30-17-03-23-neural-network.jpeg)
+![picture 1](/images/2022-06-30-17-03-23-neural-network.jpeg)
 
 # Mathematical Representation
 
@@ -52,7 +52,7 @@ For `2`, the chain rule we apply to derive the loss function is called backpropa
 
 This is a 2 layer neural network with 2 input features and 2 hidden units in the hidden layer:
 
-![picture 2](/Blog/images/2022-06-30-17-22-42-2-layer-neural-network.jpeg)
+![picture 2](/images/2022-06-30-17-22-42-2-layer-neural-network.jpeg)
 
 ## Activation Function
 
@@ -205,6 +205,6 @@ $$
 
 Now you can see why this process is called backpropagation:
 
-![picture 3](/Blog/images/2022-06-30-18-33-13-backpropagation-explain.jpeg)
+![picture 3](/images/2022-06-30-18-33-13-backpropagation-explain.jpeg)
 
 The whole process of finding the weight of a certain hidden unit starts from the final activation value output, use the value of hidden units as $g(x)$ in the $g'(x) = g(x) \cdot (1-g(x))$ and ends up with the input vector for the target hidden unit.

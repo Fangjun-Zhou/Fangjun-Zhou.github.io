@@ -8,11 +8,11 @@ category: machine-learning
 
 When classify with LTU, the algorithm will stop when there's no more error in the training set. But the result may not be the best base on the real scenario:
 
-![picture 1](/Blog/images/2022-07-07-15-24-22-ltu-issue.jpeg)
+![picture 1](/images/2022-07-07-15-24-22-ltu-issue.jpeg)
 
 To solve this problem, we can introduce a thick boundary to the algorithm:
 
-![picture 2](/Blog/images/2022-07-07-15-26-20-thick-boundary.jpeg)
+![picture 2](/images/2022-07-07-15-26-20-thick-boundary.jpeg)
 
 To get the best result, we need to maximize the width of the boundary. This model is called SVM (Support Vector Machine).
 
@@ -20,7 +20,7 @@ To get the best result, we need to maximize the width of the boundary. This mode
 
 ## Describing the Problem
 
-![picture 3](/Blog/images/2022-07-07-15-32-54-plus-and-minus-plane.jpeg)
+![picture 3](/images/2022-07-07-15-32-54-plus-and-minus-plane.jpeg)
 
 When defining the SVM, two extra planes are introduced: plus and minus plane. The plus plane (blue) is higher than $w^{T}x + b = 0$, and the minus plane (red) is lower than $w^{T}x + b = 0$.
 
@@ -40,7 +40,7 @@ $$
 
 Now, $x_0 + \lambda w$ must be on the plus plane and $x_0 - \lambda w$ must be on the minus plane.
 
-![picture 4](/Blog/images/2022-07-07-15-47-45-x_0-between-plus-and-minus-plane.jpeg)
+![picture 4](/images/2022-07-07-15-47-45-x_0-between-plus-and-minus-plane.jpeg)
 
 Now, solve for $w^{T}(x_0 + \lambda w) = 1$ and $w^{T}(x_0 - \lambda w) = -1$, we will have:
 

@@ -62,7 +62,7 @@ This step sums up all the entropy $H(Y \vert X=x)$ with possibility of feature $
 
 ### Example
 
-![picture 5](/Blog/images/2022-07-08-17-54-40-conditional-entropy-example.png)
+![picture 5](/images/2022-07-08-17-54-40-conditional-entropy-example.png)
 
 Considering $p_a$ is the possibility of feature $A = a$, and $p_{b \vert a}$ is the possibility of $B = b$ when $A = a$.
 

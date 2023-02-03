@@ -26,7 +26,7 @@ Now, other examples should be clear.
 
 `char *const *` is a pointer to a constant pointer to char. The value of the outer pointer can be changed freely. But the inner pointer it's pointing to cannot be changed. Finally, when it comes to the actual characters, they can still be changed freely.
 
-![picture 1](/Blog/images/2022-05-04-22-58-27-char-const.png)  
+![picture 1](/images/2022-05-04-22-58-27-char-const.png)
 
 Just like the graph shows above, `char *const *` can be used to pass arguments to a new program. `main` function accepts these arguments, and new arguments can also be passed through APIs like `execv`.
 

@@ -13,6 +13,7 @@ category: operating-system
 `xchg(int *addr, int newVal)` returns the old value in addr, and stores the new value into the addr.
 
 Here is the equivalent C code:
+
 ```c
 int xchg(int *addr, int newVal)
 {
@@ -27,6 +28,7 @@ int xchg(int *addr, int newVal)
 `CompareAndSwap(int *addr, int expected, int newVal)` returns the value in the addr, and stores the newVal only if the value equals the expected value.
 
 Here is the equivalent C code:
+
 ```c
 int CompareAndSwap(int *addr, int expected, int newVal)
 {
@@ -44,6 +46,7 @@ int CompareAndSwap(int *addr, int expected, int newVal)
 `FetchAndAdd(int *addr)` atomically increments the value in the address and return the old value.
 
 Here is the equivalent C code:
+
 ```c
 int FetchAndAdd(int *addr)
 {
@@ -67,11 +70,11 @@ On Linux, some of the implementations are different, but the overall logic is st
 
 #### exchange_and_add and atomic_add_zero
 
-`exchange_and_add(int *addr, int value)` is a different operation, it adds value to *addr, and return old value in addr.
+`exchange_and_add(int *addr, int value)` is a different operation, it adds value to \*addr, and return old value in addr.
 
 Using `exchange_and_add`, a new atomic operation can be created: `atomic_add_zero(int *addr, int value)`
 
-This operation *Convert hex value to a proper int. Use negative of value. Compare result of exchange_and_add to negative of value, as return result.*[^2]
+This operation _Convert hex value to a proper int. Use negative of value. Compare result of exchange_and_add to negative of value, as return result._[^2]
 
 For example:
 
@@ -89,6 +92,7 @@ For example:
 ## Spin Lock
 
 Using `xchg` and `CompareAndSwap`, there are two ways to implement spin locks.
+
 ### xchg Implementation
 
 ```c
@@ -142,6 +146,7 @@ The problem of spin lock is obvious, one thread keeps acquiring the lock can sta
 A simple implementation is ticket lock. Using two integers, threads can acquire the lock in a certain order. It is less possible for a single thread to use all the resources.
 
 The simplified implementation looks like this:
+
 ```c
 typedef struct __lock_t
 {
@@ -246,7 +251,7 @@ The `mutex_unlock` function use `atomic_add_zero` to check **if there's any othe
 
 Then, the added value should be tested to be 0. If `mutex` value after adding 0x80000000 is 0, no thread was waiting for the lock. Otherwise, at least one thread is waiting for the lock.
 
-In the first case, the unlock function can return immediately. In the second case, `futex_wake` syscall is used to wake one waiting thread listening to address `mutex`. It cannot be guaranteed that which thread is awake at first. The queue is managed completely by the OS. And *a waiter with a higher scheduling priority is not guaranteed to be awoken in preference to a waiter with a lower priority*[^3].
+In the first case, the unlock function can return immediately. In the second case, `futex_wake` syscall is used to wake one waiting thread listening to address `mutex`. It cannot be guaranteed that which thread is awake at first. The queue is managed completely by the OS. And _a waiter with a higher scheduling priority is not guaranteed to be awoken in preference to a waiter with a lower priority_[^3].
 
 ### Fairness Problem (Require Further Research)
 
@@ -280,9 +285,9 @@ The author mentioned that when the lock is acquired by one thread, no thread hav
 
 For 4 examples given in the article, lock opportunities for each thread can be calculated:
 
-![picture 1](/Blog/images/2022-06-05-03-55-16-lock-usage-example.png)  
+![picture 1](/images/2022-06-05-03-55-16-lock-usage-example.png)
 
-![picture 2](/Blog/images/2022-06-05-03-55-51-lock-usage-stat.png)  
+![picture 2](/images/2022-06-05-03-55-51-lock-usage-stat.png)
 
 In the table, Jain's fairness index is calculated. This index is based on following formula.
 
@@ -301,13 +306,10 @@ $$
 From this table, it is clear that most modern locks are unfair, while desired lock is completely fair.
 
 ---
+
 {: data-content="footnotes"}
 
-
 [^1]: [Operating Systems: Three Easy Pieces - Locks](https://pages.cs.wisc.edu/~remzi/OSTEP/threads-locks.pdf)
-
 [^2]: [Hardware Support Locking](https://xiayingp.gitbook.io/build_a_os/lock/untitled-3)
-
 [^3]: [futex — Linux manual page](https://man7.org/linux/man-pages/man2/futex.2.html)
-
 [^5]: [Avoiding Scheduler Subversion usingScheduler–Cooperative Locks](https://research.cs.wisc.edu/wind/Publications/eurosys20-scl.pdf)
