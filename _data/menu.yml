@@ -52,6 +52,14 @@ entries:
       show_more_text: See archive...
       show_more_url: numerical-methods.html
 
+  - title: differential equations
+    post_list:
+      limit: 3
+      category: differential-equations
+      show_more: true
+      show_more_text: See archive...
+      show_more_url: differential-equations.html
+
   - title: unity dots
     post_list:
       limit: 3
