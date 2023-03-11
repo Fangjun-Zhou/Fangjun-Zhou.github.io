@@ -9,6 +9,10 @@
       "language": "markdown",
       "scheme": "file",
       "pattern": "_posts/Astrodynamics/2022-11-24-dot-product-of-vector-with-its-derivative.md"
+    },
+    {
+      "language": "markdown",
+      "scheme": "file"
     }
   ]
 }
