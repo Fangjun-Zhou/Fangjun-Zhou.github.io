@@ -28,7 +28,7 @@ entries:
       show_more_text: See archive...
       show_more_url: algorithms.html
 
-  - title: computer-graphics
+  - title: computer graphics
     post_list:
       limit: 3
       category: computer-graphics
@@ -43,6 +43,14 @@ entries:
       show_more: true
       show_more_text: See archive...
       show_more_url: operating-system.html
+
+  - title: numerical methods
+    post_list:
+      limit: 3
+      category: numerical-methods
+      show_more: true
+      show_more_text: See archive...
+      show_more_url: numerical-methods.html
 
   - title: unity dots
     post_list:
