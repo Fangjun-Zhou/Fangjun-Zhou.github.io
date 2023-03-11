@@ -72,3 +72,39 @@ $$
     y(x) &= \frac{1}{\mu(x)}(y_0 + (\int_{x_0}^{x} \mu(x) g(x) dx))
 \end{aligned}
 $$
+
+# Examples
+
+Solve linear ODE: $\frac{dy}{dx} = x - y, y(0) = -1$
+
+Convert to the standard form:
+
+$$
+\begin{aligned}
+    \frac{dy}{dx} + y &= x, \quad p(x) = 1, g(x) = x \\
+    \mu(x) = e^{\int_{0}^{x} 1 dx} &= e^x \\
+    y(x) &= e^{-x} (-1 + \int_{0}^{x} (e^x x)dx)
+\end{aligned}
+$$
+
+Integrate $\int_{0}^{x} (e^x x)dx$ by parts:
+
+$$
+\begin{aligned}
+    \int_{0}^{x} & (e^x x)dx \\
+    u = x &\quad dv = e^x dx \\
+    du = dx &\quad v = e^x \\
+    \int_{0}^{x} (e^x x)dx &= (xe^x) \vert_{0}^{x} + \int_{0}^{x}e^x dx
+\end{aligned}
+$$
+
+Thus,
+
+$$
+\begin{aligned}
+    y(x) &= e^{-x} (-1 + \int_{0}^{x} (e^x x)dx) \\
+    &= e^{-x} (-1 + (xe^x) \vert_{0}^{x} + \int_{0}^{x}e^x dx) \\
+    &= e^{-x} (-1 + xe^x - e^x + 1) \\
+    &= x - 1
+\end{aligned}
+$$
