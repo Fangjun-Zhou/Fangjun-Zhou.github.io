@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Linear First-Order Equations
+title: Terminal Velocity
 category: differential-equations
 ---
 
