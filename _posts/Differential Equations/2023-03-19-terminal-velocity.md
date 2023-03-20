@@ -38,7 +38,7 @@ $$
 \end{aligned}
 $$
 
-This equation describes the velocity of the mass at arbitrary time t. Notice that when $t \to \infin$, $(1 - e^{-kt/m}) \to 1$, and $v \to -\frac{mg}{k}$, which is the terminal velocity.
+This equation describes the velocity of the mass at arbitrary time t. Notice that when $t \to \infty$, $(1 - e^{-kt/m}) \to 1$, and $v \to -\frac{mg}{k}$, which is the terminal velocity.
 
 ## Example
 
@@ -47,14 +47,14 @@ This equation describes the velocity of the mass at arbitrary time t. Notice tha
 Given the terminal velocity:
 
 $$
-v_{\infin} = -200 km/h = -\frac{500}{9} m/s
+v_{\infty} = -200 km/h = -\frac{500}{9} m/s
 $$
 
 Calculate k by:
 
 $$
 \begin{aligned}
-    k &= - \frac{mg}{v_{\infin}} = \frac{441}{25} \\
+    k &= - \frac{mg}{v_{\infty}} = \frac{441}{25} \\
 \end{aligned}
 $$
 
@@ -62,7 +62,7 @@ To attain one-half the speed at $t_1$
 
 $$
 \begin{aligned}
-    v(t_1) &= \frac{1}{2} v_{\infin} \\
+    v(t_1) &= \frac{1}{2} v_{\infty} \\
     1 - e^{-kt_1/m} &= 0.5 \\
     e^{-kt_1/m} &= 0.5 \\
     t_1 &= - \frac{m}{k} ln(0.5) \\
