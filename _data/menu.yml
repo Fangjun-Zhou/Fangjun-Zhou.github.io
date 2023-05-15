@@ -20,6 +20,14 @@ entries:
       show_more_text: See archive...
       show_more_url: machine-learning.html
 
+  - title: computer vision
+    post_list:
+      limit: 3
+      category: computer-vision
+      show_more: true
+      show_more_text: See archive...
+      show_more_url: computer-vision.html
+
   - title: algorithms
     post_list:
       limit: 3
