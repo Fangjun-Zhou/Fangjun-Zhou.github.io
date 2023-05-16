@@ -1,3 +1,3 @@
 # Blog
 
-Main page: https://fangjun-zhou.github.io/
+Main page: https://fangjunzhou.github.io/
