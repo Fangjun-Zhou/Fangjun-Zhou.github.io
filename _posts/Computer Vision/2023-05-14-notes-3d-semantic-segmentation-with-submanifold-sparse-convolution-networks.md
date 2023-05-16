@@ -66,3 +66,34 @@ In the paper, the author mentioned that "two neighboring connected components ar
 Specifically, in the following example, the submanifold dilation version of SCNN can connect site 1 and 2 with shaded site. The constant activity implementation cannot establish this connection as the site is not active.
 
 ![submanifold-dilation-vs-constant-activity](/images/2023-05-15-23-54-57.png)
+
+### Sparse Convolutional Operations
+
+A sparse convolution $SC(m, n, f, s)$ is defined with m input feature planes, n output feature planes, a filter with size f, and stride s.
+
+Here, "m input feature planes" means for each site, there is a m-dimensional feature vector.
+
+A submanifold sparse convolution $SSC(m, n, f, s)$ is defined similar to $SC$, while all the active sites are restricted to be the same as active input sites.
+
+In the paper, $a$ is defined as the number of active input to the **spacial location**.
+
+### implementation
+
+To store the data in each layer, a value matrix of size $a \times m$ and an indexing hash table is used. Note that these two data structures are used to store layer data such as input data or hidden layer state. The weights of the neural network is stored in another matrix.
+
+Given a convolution with filter size $f$, there are $f^d$ sites in the previous layer that contribute to current site. $F = \{ 0, 1, \cdots , f-1 \}^d$ denote the spatial size of the convolution filter.
+
+A **rule book** $R = (R_{i} : i \in F)$ contains $f^d$ rule matrices that correspond to each position in the convolution filter. Detailed implementation will be explained later.
+
+An $SC(m, n, f, s)$ with $a$ active input sites is implemented by the following steps:
+
+1. The output hash table and value matrix are built by iterating all the active input sites and adding all the output sites that in the filter range of the input sites to the output hash table.
+The hash table maps a coordinate on the spacial dimension to a row in the value matrix.
+Thus, the size of the value matrix is $sizeof(hashtable) \times n$.
+The rule book is also built on-the-fly. For each active input $x$ located at point $i \in F$ that gives the output $y$, a row (input-hash(x), output-hash(y)) is added to the rule $R_i$
+
+2. For each $i \in F$, there is a parameter matrix $W_i$ of size $m \times n$. This matrix is used to calculate the feature vector at location i. To apply a convolution kernel, loop for each row $(j, k)$ in rule $R_i$, multiply the j-th row of the input feature value matrix and add to the output feature value matrix.
+
+**Although this implementation does not incorporate any use of VDB or even oct-tree data structure, there's still SIMD or SIMT optimization opportunity since the step 2 mentioned above can be executed in parallel.**
+
+However, the detailed performance of this operation when compared with oct-tree implementation need further benchmark.
