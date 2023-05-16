@@ -48,3 +48,21 @@ This implementation also leads to an decrease in sparsity as data propagating th
 This issue is less severe when the input data is relative dense. But the aforementioned data dilation issue is problematic in cases incorporate d-dimensional structures in (d+1)-dimensional input (a 2d surface in 3d space). A classical example is 3D point-cloud data, which often represents 2d surfaces.
 
 The author refer to this problem as "submanifold dilation problem".
+
+## Submanifold Convolutional Network
+
+In this paper, the authors propose a solution to the submanifold dilation problem that "restricts the output of the convolution only to the set of active input points."
+
+The visualization of this structure is demonstrated in fig 2 and fig 3:
+
+![fig-2-and-3](/images/2023-05-15-23-39-31.png)
+
+Fig 2 is shows that after each convolution layer, the active sites expand and the sparsity decrease. While in fig 3, the sparsity of each hidden layer is preserved by forcing the active sites in all layers to remain the same.
+
+### Information Flow Between Connected Components
+
+In the paper, the author mentioned that "two neighboring connected components are treated completely independently," and this issue can lead to loss of information in hidden layers.
+
+Specifically, in the following example, the submanifold dilation version of SCNN can connect site 1 and 2 with shaded site. The constant activity implementation cannot establish this connection as the site is not active.
+
+![submanifold-dilation-vs-constant-activity](/images/2023-05-15-23-54-57.png)
