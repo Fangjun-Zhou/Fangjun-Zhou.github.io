@@ -55,7 +55,7 @@ In this paper, the authors propose a solution to the submanifold dilation proble
 
 The visualization of this structure is demonstrated in Fig 2 and Fig 3:
 
-![fig-2-and-3](https://github.com/fangjunzhou/sparse-convolutional-neural-network/assets/79500078/b8cc5dfc-657a-4c05-8dd8-61dee7baa2ee)
+![](/images/2023-05-27-16-42-45.png)
 
 Fig 2 shows that after each convolution layer, the active sites expand, and the sparsity decrease. While in Fig 3, the sparsity of each hidden layer is preserved by forcing the active sites in all layers to remain the same.
 
@@ -65,7 +65,7 @@ In the paper, the author mentioned that "two neighboring connected components ar
 
 Specifically, in the following example, the submanifold dilation version of SCNN can connect sites 1 and 2 with the shaded site. The constant activity implementation cannot establish this connection as the site is inactive.
 
-![submanifold-dilation-vs-constant-activity](https://github.com/fangjunzhou/sparse-convolutional-neural-network/assets/79500078/5c256a91-c631-48d5-b3f3-aa553fc4c652)
+![](/images/2023-05-27-16-42-56.png)
 
 ### Sparse Convolutional Operations
 
