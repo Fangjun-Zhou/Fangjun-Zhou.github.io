@@ -28,7 +28,7 @@ Another way to process 3D data is using 2.5D convolutions, where the spatial dat
 
 An early study and the authors' own previous work about 3D CNN were done to leverage the volumetric representation of LiDAR data in machine learning tasks. This paper further compares several occupancy representations and proposes a model with better performance.
 
- ## Approach
+## Approach
 
 The main architecture of the model proposed by this paper can be divided into two parts: **volumetric grid spatial occupancy representation conversion** and **3D CNN classification**.
 
