@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Notes - 3D Semantic Segmentation with Submanifold Sparse Convolutional Networks
+title: Notes - OctNet - Learning Deep 3D Representations at High Resolutions
 category: computer-vision
 ---
 
