@@ -20,14 +20,6 @@ entries:
       show_more_text: See archive...
       show_more_url: high-performance-computing.html
 
-  - title: algorithms
-    post_list:
-      limit: 3
-      category: algorithms
-      show_more: true
-      show_more_text: See archive...
-      show_more_url: algorithms.html
-
   - title: computer graphics
     post_list:
       limit: 3
@@ -43,6 +35,14 @@ entries:
       show_more: true
       show_more_text: See archive...
       show_more_url: machine-learning.html
+
+  - title: algorithms
+    post_list:
+      limit: 3
+      category: algorithms
+      show_more: true
+      show_more_text: See archive...
+      show_more_url: algorithms.html
 
   - title: operating system
     post_list:
