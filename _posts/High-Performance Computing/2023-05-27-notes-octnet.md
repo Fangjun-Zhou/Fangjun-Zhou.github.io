@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Notes - OctNet - Learning Deep 3D Representations at High Resolutions
-category: computer-vision
+category: high-performance-computing
 ---
 
 ## Original Paper

@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Notes - VoxNet - A 3D Convolutional Neural Network for real-time object recognition
-category: computer-vision
+category: high-performance-computing
 ---
 
 ## Original Paper

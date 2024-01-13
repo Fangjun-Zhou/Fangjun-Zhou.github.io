@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Notes - 3D Semantic Segmentation with Submanifold Sparse Convolutional Networks
-category: computer-vision
+category: high-performance-computing
 ---
 
 # Notes: 3D Semantic Segmentation with Submanifold Sparse Convolutional Networks
