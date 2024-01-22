@@ -4,9 +4,11 @@ title: About
 permalink: /about/
 ---
 
-Hi! This is Fangjun Zhou! I'm a indie game developer and currently major in Computer Science at the University of Wisconsin-Madison.
+My name is Fangjun Zhou. I'm a computer science student working on computer graphics and computer vision research.
 
-I'll post some stuff related to game development, computer graphics, machine learning, algorithms, operating system, and other stuff that I'm interested in here.
+I was previously a game developer. I've worked on a Unity open-source framework and several indie games.
+
+I'll post articles on computer graphics, computer vision, high-performance computing, and game development here.
 
 ## Contacts
 
@@ -16,8 +18,8 @@ I'll post some stuff related to game development, computer graphics, machine lea
 
 ### Github
 
-[鱼丸子\_OvO](https://github.com/Fangjun-Zhou)
+[Fangjun Zhou](https://github.com/fangjunzhou)
 
-### Bilibili
+### YouTube
 
-[鱼丸子\_OvO](https://space.bilibili.com/15654501)
+[Depth Buffer](https://www.youtube.com/@depth-buffer)
