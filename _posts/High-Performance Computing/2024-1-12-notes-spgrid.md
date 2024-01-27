@@ -36,8 +36,23 @@ The basic building block for SPGrid is a geometric block, which takes 4KB in gen
 
 The geometric blocks are traversed using the Morton curve. According to the paper, this ensures that geometrically proximate blocks will be stored in nearby memory blocks with high probability.
 
-<img width="572" alt="image" src="https://github.com/fangjunzhou/fangjunzhou.github.io/assets/79500078/390e2b48-539a-4f1e-b3e9-6a9f348f7f5e">
+![Morton Curve](/images/2024-01-25-07-46-38.png)
 
 To allocate the entire virtual grid, the author used the `mmap` API. The theoretical virtual memory limit is 128TB per process, as the paper mentions. This comes from the x86 architectural limit with a 4-level page table. However, with a 5-level page table, it's possible to reach up to 64PB virtual address space.
 
 A detailed architectural memory layout can be found [here](https://www.kernel.org/doc/Documentation/x86/x86_64/mm.txt).
+
+In the paper, the authors used
+
+```c++
+void *ptr = mmap(0, size, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS|MAP_NORESERVE, -1, 0);
+```
+
+to allocate a continuous chunck of virtual memory. The researved addresses represent the virtual grid.
+
+According to the documentation, the `mmap` API accepts a starting address and a allocation size as the first two arguments.
+
+The third argument marks the permission of the allocated memory. In this case, `PROT_READ|PROT_WRITE` means the memory can be read and write.
+
+The fourth argument marks the flag of the memory. According to the authors, the flags `MAP_PRIVATE|MAP_ANONYMOUS|MAP_NORESERVE` instruct the operating system to **never** swap out any allocated pages. Therefore, all the pages in the virtual address range is either a physical memory resident or has never been touched before.
+
