@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Complex Number Review
-category: quaternions
+category: pure-math
 ---
 
 # Complex Number Representation

@@ -1,7 +1,7 @@
 ---
 layout: post
 title: The Wronskian
-category: differential-equations
+category: numerical-methods-and-differential-equations
 ---
 
 # The Wronskian
@@ -65,7 +65,7 @@ $$
 The Wronskian W is given by:
 
 $$
-W = 
+W =
 \begin{vmatrix}
   X_1(t_0) & X_2(t_0) \\
   \dot{X_1}(t_0) & \dot{X_2}(t_0)

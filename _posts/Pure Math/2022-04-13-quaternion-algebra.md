@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Quaternion Algebra
-category: quaternions
+category: pure-math
 ---
 
 # Basic Definition
@@ -109,7 +109,7 @@ $$
 
 Note that in the red part, we first use $a_yjb_zk = a_yb_zi$, and then use $a_zkb_yj = -a_zb_yi$. This gives $(a_yb_z - a_zb_y)i$. The same process also applies to other terms.
 
-Recall that for two vector 
+Recall that for two vector
 $$
 \textbf{a} = <a_x, a_y, a_z>, \textbf{b} = <b_x, b_y, b_z>
 $$
@@ -118,7 +118,7 @@ The cross product of these two vectors is:
 
 $$
 \begin{aligned}
-    \textbf{a} \times \textbf{b} &= 
+    \textbf{a} \times \textbf{b} &=
     \begin{vmatrix}
         i & j & k \\
         a_x & a_y & a_z \\

@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Linear First-Order Equations
-category: differential-equations
+category: numerical-methods-and-differential-equations
 ---
 
 # Linear First-Order Differential Equations

@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Introduction to TOKMAK Framework
-category: tokmak-framework
+category: miscellaneous
 ---
 
 # What Is TOKMAK Framework

@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Dive into ECS 1 - Entities
-category: unity-dots
+category: miscellaneous
 ---
 
 # ECS Overview

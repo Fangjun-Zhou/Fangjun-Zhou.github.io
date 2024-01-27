@@ -1,7 +1,7 @@
 ---
 layout: post
 title: C & C++ Constant Pointers
-category: cpp
+category: miscellaneous
 ---
 
 Constant pointers in C and C++ can always be confusing.

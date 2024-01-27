@@ -44,42 +44,26 @@ entries:
       show_more_text: See archive...
       show_more_url: algorithms.html
 
-  - title: operating system
+  - title: numerical methods and differential equations
     post_list:
       limit: 3
-      category: operating-system
+      category: numerical-methods-and-differential-equations
       show_more: true
       show_more_text: See archive...
-      show_more_url: operating-system.html
+      show_more_url: numerical-methods-and-differential-equations.html
 
-  - title: numerical methods
+  - title: pure-math
     post_list:
       limit: 3
-      category: numerical-methods
+      category: pure-math
       show_more: true
       show_more_text: See archive...
-      show_more_url: numerical-methods.html
+      show_more_url: pure-math.html
 
-  - title: differential equations
+  - title: miscellaneous
     post_list:
       limit: 3
-      category: differential-equations
+      category: miscellaneous
       show_more: true
       show_more_text: See archive...
-      show_more_url: differential-equations.html
-
-  - title: unity dots
-    post_list:
-      limit: 3
-      category: unity-dots
-      show_more: true
-      show_more_text: See archive...
-      show_more_url: unity-dots.html
-
-  - title: quaternions
-    post_list:
-      limit: 3
-      category: quaternions
-      show_more: true
-      show_more_text: See archive...
-      show_more_url: quaternions.html
+      show_more_url: miscellaneous.html

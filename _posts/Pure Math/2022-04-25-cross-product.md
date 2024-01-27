@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Cross Product
-category: quaternions
+category: pure-math
 ---
 
 I'm fucked up with cross-product. So I decided to write this shit.

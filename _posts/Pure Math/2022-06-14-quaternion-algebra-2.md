@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Quaternion Algebra 2
-category: quaternions
+category: pure-math
 ---
 
 # Quaternion Products

@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Terminal Velocity
-category: differential-equations
+category: numerical-methods-and-differential-equations
 ---
 
 # Terminal Velocity Problem

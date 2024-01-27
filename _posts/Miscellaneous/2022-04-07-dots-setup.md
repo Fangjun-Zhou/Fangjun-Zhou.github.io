@@ -1,7 +1,7 @@
 ---
 layout: post
 title: DOTS 0.50.0 Setup in Unity 2020.3.32
-category: unity-dots
+category: miscellaneous
 ---
 
 # Unity Requirement
@@ -12,7 +12,7 @@ To use DOTS 0.50.0, I updated my Unity to 2020.3.32. Although, this needs me to 
 
 # Install Shortcut
 
-The most efficient way to install the DOTS framework is to install the hybrid renderer package since it includes other DOTS packages like Entities and Jobs. 
+The most efficient way to install the DOTS framework is to install the hybrid renderer package since it includes other DOTS packages like Entities and Jobs.
 
 However, it's worth mentioning that the hybrid renderer will not install any DOTS physics package. So to use the new Unity Physics or Havok Physics, you need to install it manually.
 

@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Taylor Series and Maclaurin Series Review
-category: numerical-methods
+category: numerical-methods-and-differential-equations
 ---
 
 # Taylor Polynomial

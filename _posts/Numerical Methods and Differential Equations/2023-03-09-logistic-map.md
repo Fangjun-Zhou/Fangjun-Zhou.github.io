@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Logistic Map
-category: numerical-methods
+category: numerical-methods-and-differential-equations
 ---
 
 # Definition

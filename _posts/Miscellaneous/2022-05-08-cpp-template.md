@@ -1,7 +1,7 @@
 ---
 layout: post
 title: C++ Template
-category: cpp
+category: miscellaneous
 ---
 
 # How Templates Works

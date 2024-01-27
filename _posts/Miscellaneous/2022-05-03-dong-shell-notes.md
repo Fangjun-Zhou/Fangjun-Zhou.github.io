@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Dong Shell Notes 20220503
-category: dong-shell
+category: miscellaneous
 ---
 
 # POSIX API

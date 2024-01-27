@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Inter-process Communication Using Pipe
-category: dong-shell
+category: miscellaneous
 ---
 
 # Linux Inter-process Communication

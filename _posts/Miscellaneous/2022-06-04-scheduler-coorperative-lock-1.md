@@ -1,7 +1,7 @@
 ---
 layout: post
 title: SCL-1 From Lock Implementation to Lock Opportunities
-category: operating-system
+category: miscellaneous
 ---
 
 # Traditional Locks

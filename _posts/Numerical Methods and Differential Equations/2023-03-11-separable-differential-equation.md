@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Separable Differential Equation
-category: differential-equations
+category: numerical-methods-and-differential-equations
 ---
 
 # Example

@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Dot Product of Vector with its Derivative
-category: astrodynamics
+category: miscellaneous
 ---
 
 # Theorem to Proof
