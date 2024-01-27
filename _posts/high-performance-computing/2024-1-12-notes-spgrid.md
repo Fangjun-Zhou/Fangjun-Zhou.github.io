@@ -56,3 +56,14 @@ The third argument marks the permission of the allocated memory. In this case, `
 
 The fourth argument marks the flag of the memory. According to the authors, the flags `MAP_PRIVATE|MAP_ANONYMOUS|MAP_NORESERVE` instruct the operating system to **never** swap out any allocated pages. Therefore, all the pages in the virtual address range is either a physical memory resident or has never been touched before.
 
+### Operating System Background
+
+To better understand how this mechanism help the SPGrid implementation, we need to review the virtual memory layout of modern computers.
+
+In 32-bit systems, a virtual memory address is composed of a 12-bit offset and 20-bit virtual page number. Each page takes $2^12 = 4KB$ and the maximum virtual memory address is 4GB.
+
+In 64-bit systems, virtual memory addresses are not limited by the length of the address but the size of page table. This explaines why 5-level page tabels allow larger virtual memory address.
+
+To translate virtual addresses to physical addresses, the operating system uses page tables to map virtual page numbers to physical page numebrs. Offsets are not translated because memory in the same page are continuous on the physical memory.
+
+Modern computer architectures also introduced Translate Lookaside Buffers (TLB) to accelerate page number translations.
