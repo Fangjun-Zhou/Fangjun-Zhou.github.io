@@ -10,6 +10,10 @@ I was previously a game developer. I've worked on a Unity open-source framework 
 
 I'll post articles on computer graphics, computer vision, high-performance computing, and game development here.
 
+## GPG Public Key
+
+My GPG public key: [public.gpg](/documents/public.gpg)
+
 ## Contacts
 
 ### LinkedIn
