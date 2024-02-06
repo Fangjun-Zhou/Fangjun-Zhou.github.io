@@ -1,0 +1,1 @@
+{"rule":"UPPERCASE_SENTENCE_START","sentence":"^\\Qto allocate a continuous chunk of virtual memory.\\E$"}
