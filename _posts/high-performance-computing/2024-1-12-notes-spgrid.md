@@ -14,7 +14,7 @@ In fluid simulations, sparse data structures are widely used for spatial adaptat
 Previous solutions include CSR grids, oct-trees, and [H-RLE level set](https://doi.org/10.1145/1122501.1122508).
 Some more recent studies also used [OpenVDB](https://dl.acm.org/doi/10.1145/2487228.2487235), a B+ tree-like data structure.
 
-Methods such as SCR grids and oct-trees may suffer from low cache hit rates and, therefore, experience lower computational bandwidth than the theoretical one.
+Methods such as CSR grids and oct-trees may suffer from low cache hit rates and, therefore, experience lower computational bandwidth than the theoretical one.
 
 SPGrid also stores sparse data with a minimal memory footprint while maintaining a relatively high memory throughput for both sequential and stencil access.
 The most important contribution to this work is the hardware acceleration for sparse uniform grids. Each geometric block occupies one memory page. Therefore, the accessed blocks can be cached in TLB.
@@ -73,3 +73,9 @@ When a memory access instruction is executed, the address is first sent to TLB f
 If there's a TLB miss, the MMU will try to translate the memory in the page table. A page table hit will load the translation history to the TLB and read the page. A page table miss will result in a page fault.
 
 In the operating system course I took during college, the page fault can be only caused by swapping. A page fault will trigger the operating system to look for the corresponding page on the swap file on disk. But the page may not even exist if the `mmap` API is used. In this case, the OS will create a zero-initialized page on the memory.
+
+### Address Arithmetic
+
+SPGrid uses a special address encoding to traverse the data in Morton curve. The lower bits inside a memory page is encoded in the traditional C++ n-dimensional array. The higher bits are computed by interleaving the Cartesian coordinate.
+
+This memory encoding technique also supports storing multiple channels of data in the same SPGrid. In the original paper, channel data is stored in the geometric blocks. While each geometric block takes 1 page, a lagrer channel size will makes the lexicographical size of the geometric block smaller.
