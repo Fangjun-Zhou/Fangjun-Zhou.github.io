@@ -149,7 +149,7 @@ OK, if the direct method is good, why the conjugate gradient method?
 
 The problem with direct methods is that the time complexity for LU factorization and QR factorization are both $O(n^3)$. This matrix $A$ can get to a huge size in our heat dissipation simulation.
 
-Remember, the grid size is $256^3 = 2^24$. This is only the length of $A$ because we stretched the grid into a vector and multiplied that vector by $A$. So the size of $A$ is $256^3 \cdot 256^3$. With this kind of linear system, you don't want to solve it with a direct solver not only because the time complexity just skyrocketed but also because it's impossible to even store the matrix in **dense format**.
+Remember, the grid size is $256^3 = 2^{24}$. This is only the length of $A$ because we stretched the grid into a vector and multiplied that vector by $A$. So the size of $A$ is $256^3 \cdot 256^3$. With this kind of linear system, you don't want to solve it with a direct solver not only because the time complexity just skyrocketed but also because it's impossible to even store the matrix in **dense format**.
 
 The indirect methods, such as the conjugate gradient method, can be faster than the direct methods when the matrix is large. This is because it just iteratively improves the matrix to make it closer to the root. The solver does not need to actually "solve" the system but to bring the result accurate enough so that the error is close or even smaller than the system floating point accuracy limit. This is the intuition and beauty behind a lot of numerical methods.
 
