@@ -5,7 +5,7 @@ category: computer-graphics
 ---
 
 <script src="https://requirejs.org/docs/release/2.3.6/comments/require.js"></script>
-<script src="/scripts/ecsy/build/out.js" id="module"></script>
+<script src="/public/ecsy/build/out.js" id="module"></script>
 <style>
   .title {
     font-weight: bold;
